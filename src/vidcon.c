@@ -7,7 +7,7 @@ static uint16_t regs[3];
 void vidcon_init_default(void)
 {
 	regs[0] = 0x0000; // 512x512, 16-color
-	regs[1] = 0x06E4; // Sprites > Text > GP0 > GP1 > GP2 > GP3
+	regs[1] = 0x12E4; // Text > Sprites/PCG> (GP0 > GP1 > GP2 > GP3)
 	regs[2] = 0x007F; // Enable all graphics layers.
 }
 

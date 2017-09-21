@@ -1,5 +1,7 @@
 /*
 
+// TODO: Page 224 of Inside has a good example of the raster copy
+
 X68000 CTT Controller Helper Functions (crtc)
 c. Michael Moffitt 2017
 

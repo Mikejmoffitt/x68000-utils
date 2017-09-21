@@ -2,29 +2,26 @@
 
 // Shadow register copies for bitfields / combined registers
 static uint16_t r20, r21, r22;
-static uint8_t ctrl;
 
 // Set up some sane defaults
 // TODO: Verify on hardware
 void crtc_init_default(void)
 {
-	volatile uint16_t *r20_reg = (uint16_t *)0xE80028;
+	crtc_set_text_xscroll(0);
+	crtc_set_text_yscroll(0);
+	crtc_set_gp0_xscroll(0);
+	crtc_set_gp0_yscroll(0);
+	crtc_set_gp1_xscroll(0);
+	crtc_set_gp1_yscroll(0);
+	crtc_set_gp2_xscroll(0);
+	crtc_set_gp2_yscroll(0);
+	crtc_set_gp3_xscroll(0);
+	crtc_set_gp3_yscroll(0);
 
-    crtc_set_text_xscroll(0);
-    crtc_set_text_yscroll(0);
-    crtc_set_gp0_xscroll(0);
-    crtc_set_gp0_yscroll(0);
-    crtc_set_gp1_xscroll(0);
-    crtc_set_gp1_yscroll(0);
-    crtc_set_gp2_xscroll(0);
-    crtc_set_gp2_yscroll(0);
-    crtc_set_gp3_xscroll(0);
-    crtc_set_gp3_yscroll(0);
+	r20 = 0x0015; // 31Khz 512x512, 16 color mode
+	r21 = 0x00FF; // Disable simultaneous write stuff
 
-    r20 = 0x0015; // 31Khz 512x512, 16 color mode
-    r21 = 0x00FF; // Disable simultaneous write stuff
-
-    // R20-R23 and the CTRL register are not touched here
+	// R20-R23 and the CTRL register are not touched here
 }
 
 // R00 - R08: Display timings ================================================
