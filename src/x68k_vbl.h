@@ -1,5 +1,5 @@
-#ifndef VBL_H
-#define VBL_H
+#ifndef _X68K_SYNC_H
+#define _X68K_SYNC_H
 
 /* MFP address */
 #define MFP_BASE  0xE88000
@@ -40,19 +40,25 @@ struct MFP
 #define GPIP_POWSW    (1 << 2)
 #define GPIP_OPMIRQ   (1 << 3)
 #define GPIP_VDISP    (1 << 4)
-#define GPIP_CRTC     (1 << 6)
+#define GPIP_VSYNC    (1 << 6)
 #define GPIP_HSYNC    (1 << 7)
 
-static void inline wait_for_vblank (void)
+static void inline x68k_wait_for_vsync(void)
+{
+	while (mfp.gpdr & GPIP_VSYNC);
+	while (!(mfp.gpdr & GPIP_VSYNC));
+}
+
+static void inline x68k_vbl_wait_for_vblank(void)
 {
 	/* CRTC under vdisp */
 	while (mfp.gpdr & GPIP_VDISP);
 }
 
-static void inline wait_for_vdisp (void)
+static void inline x68k_vbl_wait_for_vdisp(void)
 {
 	/* CRTC under vblank */
 	while (!(mfp.gpdr & GPIP_VDISP));
 }
 
-#endif // VBL_H
+#endif // _X68K_SYNC_H
