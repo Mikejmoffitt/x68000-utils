@@ -1,0 +1,3666 @@
+	- IOCS CALL MANUAL -
+	
+==============================================================================
+
+・IOCS Call List
+
+$00	_B_KEYINP	Read Key Data
+$01	_B_KEYSNS	Key Input Test
+$02	_B_SFTSNS	Shift Key State Sense
+$03	_KEY_INIT	Initialize Key Input
+$04	_BITSNS		Key bitfield status read
+$05	_SKEYSET	Send Keystroke
+$06	_LEDCTRL	Set Keyboard LED State
+$07	_LEDSET		Set Keyboard LEDs Based on Input Method
+$08	_KEYDLY		Set Key Repeat Delay Time
+$09	_KEYREP		Set Key Repeat Rate
+$0a	(unused)	Enable Television Control via OPT.2
+$0b	(unused)	Disable Television Control via OPT.2
+$0c	_TVCTRL		Television Control
+$0d	_LEDMOD		Set LED Mode
+$0e	_TGUSEMD	Screen Plane Usage Setting
+$0f	_DEFCHR		Gaiji (External Character) Definition
+$10	_CRTMOD		CRT Mode Setting
+$11	_CONTRAST	Set Contrast
+$12	_HSVTORGB	HSV to RGB Conversion
+$13	_TPALET		Set Text Palette
+$14	_TPALET2	Set Text Palette (independent)
+$15	_TCOLOR		Set Text Plane
+$16	_FNTADR		Get Font Address
+$17	_VRAMGET	VRAM Read Bytewise
+$18	_VRAMPUT	VRAM Write Bytewise
+$19	_FNTGET		Font Load
+$1a	_TEXTGET	Text VRAM Read Dot
+$1b	_TEXTPUT	Text VRAM Write Dot
+$1c	_CLIPPUT	Text VRAM Write Dot (With Clipping)
+$1d	_SCROLL		Set Display Coordinates
+$1e	_B_CURON	Cancel Cursor Pause
+$1f	_B_CUROFF	Cursor Pause
+$20	_B_PUTC		Print Character
+$21	_B_PRINT	Print String
+$22	_B_COLOR	Set Text Color
+$23	_B_LOCATE	Move Text Cursor
+$24	_B_DOWN_S	Move Text Cursor Down 1 Line
+$25	_B_UP_S		Move Text Cursor Up 1 Line
+$26	_B_UP		Move Text Cursor Up Specified Number of Lines
+$27	_B_DOWN		Move Text Cursor Down Specified Number of Lines
+$28	_B_RIGHT	Move Text Cursor Left Specified Number of Lines
+$29	_B_LEFT		Move Text Cursor Right Specified Number of Lines
+$2a	_B_CLR_ST	Erase Multiple Text Rows
+$2b	_B_ERA_ST	Erase Multiple Text Characters
+$2c	_B_INS		Insert Multiple Lines
+$2d	_B_DEL		Delete Multiple Lines
+$2e	_B_CONSOL	Configure Display Range
+$2f	_B_PUTMES	Print String at Specified Coordinates
+$30	_SET232C	RS-232C Parameter Configuration
+$31	_LOF232C	RS-232C Rx Byte Count
+$32	_INP232C	RS-232C Get Rx Data
+$33	_ISNS232C	RS-232C Inspect Rx Data
+$34	_OSNS232C	RS-232C Tx Clear-to-Send
+$35	_OUT232C	RS-232C Tx Data
+$36	(unused)	Mouse data processing address
+$37	(unused)	Processing Address for ESC[>-based Escape Sequences
+$38	_SETFNTADR	Set Gaiji (External Charater) Font Address
+$39	(unused)	BEEP Sound PCM Data Setting
+$3a	(unused)	Set Printer Parameters
+$3b	_JOYGET		Get Joystick Input
+$3c	_INIT_PRN	Initialize Printer
+$3d	_SNSPRN		Check if Printer Output is Available
+$3e	_OUTLPT		Direct Printer Output
+$3f	_OUTPRN		Printer Output
+$40	_B_SEEK		Disk Seek
+$41	_B_VERIFY	Disk Verify
+$42	_B_READDI	Read Disk Diagnostics
+$43	_B_DSKINI	Initialize Disk
+$44	_B_DRVSNS	Check Drive Status
+$45	_B_WRITE	Write to Disk
+$46	_B_READ		Read from Disk
+$47	_B_RECALI	Disk Recalibration
+$48	_B_ASSIGN	Set Alternate Track for Hard Disk
+$49	_B_WRITED	Write Corrupt Data to 2HD (Floppy)
+$4a	_B_READID	Read ID of 2HD (Floppy)
+$4b	_B_BADFMT	Disable Hard DIsk Corrupt TracksZ
+$4c	_B_READDL	Read Corrupt Data from 2HD (Floppy)
+$4d	_B_FORMAT	Format Disk
+$4e	_B_DRVCHK	2HD (Floppy) Check Drive Status
+$4f	_B_EJECT	Eject Disk
+$50	_DATEBCD	Binary to BCD Conversion for Date Data
+$51	_DATESET	Set Date
+$52	_TIMEBCD	Binary to BCD Conversion for Time Data
+$53	_TIMESET	Set Time
+$54	_DATEGET	Get Date
+$55	_DATEBIN	BCD to Binary Conversion for Date Data
+$56	_TIMEGET	Get Time
+$57	_TIMEBIN	BCD to Binary Conversion for Time Data
+$58	_DATECNV	String to Binary Conversion for Date Data
+$59	_TIMECNV	String to Binary Conversion for Time Data
+$5a	_DATEASC	Binary to String Conversion for Date Data
+$5b	_TIMEASC	Binary to String Conversion for Time Data
+$5c	_DAYASC		Binary to String Conversion for Day-of-Week Data
+$5d	_ALARMMOD	Alarm Enable / Disable
+$5e	_ALARMSET	Set Alarm
+$5f	_ALARMGET	Get Alarm Status
+$60	_ADPCMOUT	ADPCM Out
+$61	_ADPCMINP	ADPCM In
+$62	_ADPCMAOT	ADPCM Out (Linear Array)
+$63	_ADPCMAIN	ADPCM In (Linear Array)
+$64	_ADPCMLOT	ADPCM Out (Linked List)
+$65	_ADPCMLIN	ADPCM In (Linked List)
+$66	_ADPCMSNS	ADPCM Get Status
+$67	_ADPCMMOD	ADPCM Execution Control
+$68	_OPMSET		OPM Set Register
+$69	_OPMSNS		OPM Get Status
+$6a	_OPMINTST	OPM Set Interrupt Handler
+$6b	_TIMERDST	Timer-D Set Interrupt Handler
+$6c	_VDISPST	VSync Set Interrupt Handler
+$6d	_CRTCRAS	Raster Line Set Interrupt Handler
+$6e	_HSYNCST	HSync Set Interrupt Handler
+$6f	_PRNINTST	Printer Set Interrupt Handler
+$70	_MS_INIT	Initialize Mouse
+$71	_MS_CURON	Display Mouse Cursor
+$72	_MS_CUROF	Hide Mouse Cursor
+$73	_MS_STAT	Get Mouse Cursor Status
+$74	_MS_GETDT	Get Mouse Movement & Button Status
+$75	_MS_CURGT	Get Mouse Cursor Coordinates
+$76	_MS_CURST	Set Mouse Cursor Coordinates
+$77	_MS_LIMIT	Set Mouse Cursor Movement Limits
+$78	_MS_OFFTM	Get Mouse Cursor Release Time
+$79	_MS_ONTM	Get Mouse Cursor Press Time
+$7a	_MS_PATST	Set Mouse Cursor Pattern
+$7b	_MS_SEL		Select Mouse Cursor Pattern
+$7c	_MS_SEL2	Mouse Cursor Animation
+$7d	_SKEY_MOD	Soft Keyboard Control
+$7e	_DENSNS		Calculator Control
+$7f	_ONTIME		Get Elapsed Time Since Startup
+$80	_B_INTVCS	Vector Settings
+$81	_B_SUPER	Switch Between Supervisor and User Modes
+$82	_B_BPEEK	Read 1 Byte from Specified Address
+$83	_B_WPEEK	Read 1 Word from Specified Address
+$84	_B_LPEEK	Read 1 Longword from Specified Address
+$85	_B_MEMSTR	Read Multiple Bytes from Specified Address
+$86	_B_BPOKE	Write Byte to Specified Address
+$87	_B_WPOKE	Write Word to Specified Address
+$88	_B_LPOKE	Write Longword to Specified Address
+$89	_B_MEMSET	Write Multiple Bytes to Specified Address
+$8a	_DMAMOVE	DMA Copy
+$8b	_DMAMOV_A	DMA Copy (Linear Array)
+$8c	_DMAMOV_L	DMA Copy (Linked List)
+$8d	_DMAMODE	DMA Get Status
+$8e	_BOOTINF	Get Startup Info
+$8f	_ROMVER		Get ROM Version
+$90	_G_CLR_ON	Initialize Graphics Plane and Set Display Mode
+$91	(unused)	Set Graphics Plane Mode
+$92	(unused)	Set Plane Priority
+$93	(unused)	Screen Display and Special Mode Settings
+$94	_GPALET		Graphics Plane Palette Setting
+$95	(unused)	Color Code Setting
+$96	(unused)	Access Page Setting
+$97	(unused)	Write Dot to Graphics VRAM (With Color Mask)
+$98	(unused)	Write Dot to Graphics VRAM
+$99	(unused)	Write Bit Pattern to Graphics VRAM
+$9a	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)
+$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)(バックカラーあり)
+$9c	(unused)	Write Extended Bit Pattern to Graphics VRAM
+$a0	_SFTJIS		S-JIS to JIS Code Conversion
+$a1	_JISSFT		JIS to S-JIS Code Conversion
+$a2	_AKCONV		ANK to S-JIS Code Conversion
+$a3	_RMACNV		Romaji to ANK Code Conversion
+$a4	_DAKJOB		Dakuten
+$a5	_HANJOB		Handakuten
+$ac	_SYS_STAT	Set System Status
+$ad	_B_CONMOD	Cursor and Scroll Settings
+$ae	_OS_CURON	Cursor Enable
+$af	_OS_CUROF	Cursor Disable
+$b0	_DRAWMODE	Graphic Plane Rendering モードの設定
+$b1	_APAGE		Graphic Plane Rendering ページの設定
+$b2	_VPAGE		Graphic Plane Set Display Page
+$b3	_HOME		Graphic Plane Set Display Position
+$b4	_WINDOW		Graphic Plane Rendering ウィンドウの設定
+$b5	_WIPE		Graphic Plane Clear
+$b6	_PSET		Graphic Plane Set Point
+$b7	_POINT		Graphic Plane Get Point
+$b8	_LINE		Graphic Plane Line
+$b9	_BOX		Graphic Plane Box
+$ba	_FILL		Graphic Plane Box Fill
+$bb	_CIRCLE		Graphic Plane Circle
+$bc	_PAINT		Graphic Plane Paint
+$bd	_SYMBOL		Graphic Plane Symbol
+$be	_GETGRM		Graphic Plane Read Dot-by-Dot
+$bf	_PUTGRM		Graphic Plane Write Dot-by-Dot
+$c0	_SP_INIT	Initialize Sprites
+$c1	_SP_ON		Enable Sprite Display
+$c2	_SP_OFF		Disable Sprite Display
+$c3	_SP_CGCLR	Clear Sprite Pattern Data
+$c4	_SP_DEFCG	Define Sprite Pattern
+$c5	_SP_GTPCG	Load Sprite Pattern
+$c6	_SP_REGST	Set Sprite Register
+$c7	_SP_REGGT	Get Sprite Register
+$c8	_BGSCRLST	Set Background Scroll
+$c9	_BGSCRLGT	Get Background Scroll
+$ca	_BGCTRLST	Set Background Control
+$cb	_BGCTRLGT	Get Background Control
+$cc	_BGTEXTCL	Background Text Clear
+$cd	_BGTEXTST	Background Text Set
+$ce	_BGTEXTGT	Background Text Get
+$cf	_SPALET		Set Sprite Palette
+$d3	_TXXLINE	Text Plane Horizontal Line
+$d4	_TXYLINE	Text Plane Vertical Line
+$d5	_TXLINE		Text Plane Line
+$d6	_TXBOX		Text Plane Box
+$d7	_TXFILL		Text Plane Box Fill
+$d8	_TXREV		Text Plane Invert
+$df	_TXRASCPY	Text Plane Raster Copy
+$f0	_OPMDRV		OPMDRV Control
+$f1	_RSDRV		RS-232C Extended Control
+$f2	_A_JOYGET	Analog Joystick Control
+$f3	_MUSICDRV	MUSICDRV Control
+$f5	_SCSIDRV	SCSI IOCS
+$fd	_ABORTRST	Reset Environment to Initial Settings
+$fe	_IPLERR		Reboot
+$ff	_ABORTJOB	Abort
+
+==============================================================================
+
+・Key Scan Codes
+
+Key Code	Key State Bit
+ Group		7	6	5	4	3	2	1	0
+
+	0	6&	5%	4$	3#	2"	1!	ESC
+	1	BS	\|	^~	-=	0	9)	8(	7'
+	2	U	Y	T	R	E	W	Q	TAB
+	3	S	A	CR	[{	@`	P	O	I
+	4	;+	L	K	J	H	G	F	D
+	5	N	B	V	C	X	Z	]}	:*
+	6	DEL	HOME	SPACE	_	/?	.>	,<	M
+	7	CLR	↓	→	↑	←	UNDO	R_DOWN	R_UP
+	8	4	+	9	8	7	-	*	/
+	9	0	ENTER	3	2	1	=	6	5
+	a	XF3	XF2	XF1	HELP	登録	記号	.	,
+	b	ひら	INS	CAPS	コード	ﾛ-ﾏ字	かな	XF5	XF4
+	c	F4	F3	F2	F1	F0	COPY	BREAK	全角
+	d				F9	F8	F7	F6	F5
+	e					OPT.2	OPT.1	CTRL	SHIFT
+
+	Scan Code value = (Key Code Group * 8) + Key state bit
+
+          10:TAB    20:D      30:M      40:/      50:,      60:全角   70:SHIFT
+01:ESC    11:Q      21:F      31:,<     41:*      51:.      61:BREAK  71:CTRL
+02:1!     12:W      22:G      32:.>     42:-      52:記号   62:COPY   72:OPT.1
+03:2"     13:E      23:H      33:/?     43:7      53:登録   63:F0     73:OPT.2
+04:3#     14:R      24:J      34:_      44:8      54:HELP   64:F1
+05:4$     15:T      25:K      35:SPACE  45:9      55:XF1    65:F2
+06:5%     16:Y      26:L      36:HOME   46:+      56:XF2    66:F3
+07:6&     17:U      27:;+     37:DEL    47:4      57:XF3    67:F4
+08:7'     18:I      28::*     38:R_UP   48:5      58:XF4    68:F5
+09:8(     19:O      29:]}     39:R_DOWN 49:6      59:XF5    69:F6
+0a:9)     1a:P      2a:Z      3a:UNDO   4a:=      5a:かな   6a:F7
+0b:0      1b:@`     2b:X      3b:←     4b:1      5b:ﾛ-ﾏ字  6b:F8
+0c:-=     1c:[{     2c:C      3c:↑     4c:2      5c:ｺ-ﾄﾞ   6c:F9
+0d:^~     1d:CR     2d:V      3d:→     4d:3      5d:CAPS
+0e:\|     1e:A      2e:B      3e:↓     4e:ENTER  5e:INS
+0f:BS     1f:S      2f:N      3f:CLR    4f:0      5f:ひらがな
+
+==============================================================================
+
+==============================================================================
+
+$00	_B_KEYINP	Read Key Data
+
+Ret		Key data
+	d0.hb	Scan code
+	d0.b	ASCII code
+	
+	Blocking call to read a single key press. Until a key has been entered,
+	the call will wait.
+	When SHIFT, CTRL, OPT.1, or OPT.2 are released, a value of $80 is added
+	to the scan code that is returned.
+	
+	ASCII codes are modified by SHIFT, CTRL, Kana, CAPS. If an ASCII
+	character is not defined for a modified version of the character,
+	0 is returned.
+	
+	Normally, keys assigned to TV controls are not used as character input,
+	but their key down states are observed by this call.
+	
+	(t/l note: I am not sure I understand this note about modifier
+	characters correctly. These instructions should be corroborated with
+	some testing and a better translation)
+	
+Ret		
+
+==============================================================================
+
+$01	_B_KEYSNS	Key Input Test
+
+Ret		d0.l =	0	No key
+		$1_????	〃	Key pressed ($???? = Key Data)
+	
+	Check if a key is pressed. The key input buffer is not modified.
+
+==============================================================================
+
+$02	_B_SFTSNS	Shift Key State Sense
+
+Ret		d0.l	Shift key state
+		bit 14	Full-width (全角)
+		bit 13	Hiragana (ひらがな)
+		bit 12	INS
+		bit 11	CAPS
+		bit 10	Code input (コード入力)
+		bit  9	Romaji (ローマ字)
+		bit  8	Kana (かな)
+
+		bit  7	CAPS
+		bit  6	Code input (コード入力)
+		bit  5	Romaji (ローマ字)
+		bit  4	Kana (かな)
+		bit  3	OPT.2
+		bit  2	OPT.1
+		bit  1	CTRL
+		bit  0	SHIFT
+		
+		Bits 7 through 0 indicate the key press state.
+		Bits 14 through 8 reflect the key LED state.
+		
+	Check the state of the shift/modifier keys.
+
+==============================================================================
+
+$03	_KEY_INIT	Initialize Key Input
+
+Arg		d1.b	LED key mode initial state
+
+	Clears the key input buffer and initializes LED mode. This IOCS call is
+	used during ROM startup, and is not typically used by applications.
+	
+	With ROM IOCS, please take note that this routine will return with all
+	interrupts enabled.
+
+==============================================================================
+
+$04	_BITSNS		Key bitfield status read
+
+Arg		d1.w	Key code group ($0 - $F)
+
+Ret		d0.b	Key press state (bitfield)
+
+	Returns a bitfield containing the state of eight keys comprising a key
+	code group. A key is represented as pressed when its corresponding bit
+	is set to 1.
+
+==============================================================================
+
+$05	_SKEYSET	Keystroke set
+
+Arg		d1.l	Scan code
+		bit 7	0: Key down 1: Key up
+		bit 6-0	Scan code
+
+	Generate a key input in software.
+
+==============================================================================
+
+$06	_LEDCTRL	Set Keyboard LED State
+
+Arg		d1.b	Keyboard LED state bitfield
+		bit 6	Full-width (全角)
+		bit 5	Hiragana (ひらがな)
+		bit 4	INS
+		bit 3	CAPS
+		bit 2	Code input (コード入力)
+		bit 1	Romaji (ローマ字)
+		bit 0	Kana (かな)
+	
+	Set the state of the keyboard LEDs. The key input method is not changed
+	when LEDs related to the input method are set.
+
+==============================================================================
+
+$07	_LEDSET		Set Keyboard LEDs Based on Input Method
+
+	Update the keyboard LED values based on the current input method.
+
+==============================================================================
+
+$08	_KEYDLY		Set Key Repeat Delay Time
+
+Arg		d1.b	Key Repeat Start Delay Time (0 to 15)
+
+	Sets the delay before key repeat begins sending keystrokes.
+	The value is 200 + (100 * d1.b) ms.
+
+==============================================================================
+
+$09	_KEYREP		Set Key Repeat Rate
+
+Arg		d1.b	Key Repeat period (0 - 15)
+
+	Sets the key repeat rate to (30 + 5 * d1.b) ms.
+
+==============================================================================
+
+$0a	(unused)	Enable Television Control via OPT.2
+
+	Allows TV control via OPT.2.
+	
+	Please note that ROM IOCS will not work properly unless this routine is
+	called with d0.b set to $0A.
+
+==============================================================================
+
+$0b	(unused)	Disable Television Control via OPT.2
+
+	Disallows TV control via OPT.2.
+	
+	Please note that ROM IOCS will not work properly unless this routine is
+	called with d0.b set to $0B.
+
+==============================================================================
+
+$0c	_TVCTRL		Television Control
+
+Arg	d1.l	Television Control Code
+	d1.l = $01	Volume Up
+	       $02	"      Down
+	       $03	"  Normal (Reset)
+	       $04	Channel Call (t/l note: recall?)
+	       $05	Television Input (reset) (t/l note: test this one)
+	       $06	Sound Mute
+	       $07	Power On
+	       $08	Television / Computer input switch
+	       $09	RF / Composite switch, or computer display mode switch
+	       $0a	Contrast reset
+	       $0b	Channel Up
+	       $0c	"       Down
+	       $0d	Power Off
+	       $0e	Power Toggle
+	       $0f	Superimpose, and reduced / standard contrast switch
+	       $10	Channel 1
+	       $11	        2
+	       $12	        3
+	       $13	        4
+	       $14	        5
+	       $15	        6
+	       $16	        7
+	       $17	        8
+	       $18	        9
+	       $19	        10
+	       $1a	        11
+	       $1b	        12
+	       $1c	TV Input ($05)
+	       $1d	Computer Input($05+$08)
+	       $1e	Superimpose, and reduced contrast ($05+$0f)
+	       $1f	Superimpose, and standard contrast ($05+$0f+$0a)
+	      +$20	After power on ($07), perform the specified function.
+
+Ret	d1.w is clobbered.
+
+	Television display control.
+
+==============================================================================
+
+$0d	_LEDMOD		Set LED Mode
+
+Arg		d1.l	LED Key Number
+		d1.l = 0	Kana (かな)
+		       1	Romaji (ローマ字)
+		       2	Code input (コード入力)
+		       3	CAPS
+		       4	INS
+		       5	Hiragana (ひらがな)
+		       6	Full-width (全角)
+		d2.b	ON / OFF select (0: OFF, 1: ON)
+
+Ret		d0.l =	0	Normal return
+		-1	Error (key number is out of bounds)
+		
+	Sets the keyboard LED and key input mode.
+
+==============================================================================
+
+$0e	_TGUSEMD	Screen Plane Usage Setting
+
+Arg		d1.b	Graphic / Text Plane Specification
+		d1.b =  0	Graphics / CG Planes ($c00000～$dfffff)
+		        1	Text Planes          ($e40000～$e7ffff)
+		d2.b	Plane Usage Setting
+		d2.b =	0	Unused
+			1	For System Usage (softkeys, calculator, etc)
+			2	For Application (RAMDISK, etc)
+			3	Destruction (t/l note: unsure what happens??)
+			-1	Check current plane usage setting
+
+Ret		Usage state prior to calling
+
+	Designate the usage of Graphic CG or Text planes between system,
+	application, or disuse.
+	If the text plane usage is set to 2 (application), then the soft
+	keyboard and calculator will be erased, and will not be drawn from
+	then onwards.
+
+==============================================================================
+
+$0f	_DEFCHR		Gaiji (External Character) Definition
+
+Arg		d1.hw	Pattern Size
+		d1.hw =	8	 8x16,16x16 dots
+			12	12x24,24x24 dots
+	d1.w	Kanji code (Shift-JIS / JIS)
+	a1.l	Pattern address
+
+Ret		d0.l =	0	Normal return
+		-1	Error (Specified Kanji code is not Gaiji
+		
+	Set Gaiji (External characters).
+	
+	The Kanji codes that can be used are full-width $EB9F to $EBFC
+	(JIS: $6721 to $767E) and $EC40 - $EC7E ($6621 to 777E), and half-width
+	$F400 to $F5FF.
+	When CONDRV.SYS and HIOCS.X are resident, the cursor shape is set with
+	d1.l = 0 and restored with d1.l = -1.
+	The backscroll window of CONDRV.SYS can be set with d1.l = $FFFF.
+
+==============================================================================
+
+$10	_CRTMOD		CRT Mode Setting
+
+Arg		d1.w	CRT Mode
+			        Plane    Visible        Color   Plane   H.Scan
+			        Size     Display Area   Depth   Count   (KHz)
+		d1.w =	 0      1024     512 x 512      16      1       31
+			 1      "               "       "       "       15
+			 2      "        256 x 256      "       "       31
+			 3      "               "       "       "       15
+			 4      512      512 x 512      16      4       31
+			 5      "               "       "       "       15
+			 6      "        256 x 256      "       "       31
+			 7      "               "       "       "       15
+			 8      "        512 x 512      256     2       31
+			 9      "               "       "       "       15
+			10      "        256 x 256      "       "       31
+			11      "               "       "       "       15
+			12      "        512 x 512      65536   1       31
+			13      "               "       "       "       15
+			14      "        256 x 256      "       "       31
+			15      "               "       "       "       15
+			16      1024     768 x 512      16      1       31
+			17      "       1024 x 424      "       "       24
+			18      "       1024 x 848      "       "       24
+
+			19      "        640 x 480      "       "       24
+
+			20      "        768 x 512      256     2       31
+			21      "       1024 x 848      "       "       24
+			22      "       1024 x 424      "       "       24
+			23      "        640 x 480      "       "       24
+			24      "        768 x 512      65536   1       31
+			25      "       1024 x 848      "       "       24
+			26      "       1024 x 424      "       "       24
+			27      "        640 x 480      "       "       24
+			+$100   Only change mode (t/l note: what does it do?)
+			-1      Check current mode
+
+Ret		d1.w = current mode (if -1 was specified).
+
+	Sets the CRT mode. Text planes 0 and 1 are cleared.
+	In addition, the Graphic CG and Sprite planes are hidden without being
+	cleared.
+	The text palette is initialized to the default colors.
+	
+	The 640x480 mode specified with $19 is available from ROM IOCS version
+	1.2 and above.
+	
+	Modes $20 - $27 are intended for showing graphics smaller than the
+	display screen size, and are only offered by ROM IOCS version 1.3
+	(all models of hardware can do it). 
+
+==============================================================================
+
+$11	_CONTRAST	Set Contrast
+
+Arg		d1.b	Contrast
+		d1.b =	0-15	Contrast setting
+			-1	Check the contrast setting (no change)
+			-2	Return to system default
+
+Ret		Contrast value prior to calling.
+
+	Sets the contrast value.
+
+==============================================================================
+
+$12	_HSVTORGB	HSV to RGB Conversion
+
+Arg		d1.l	HSV Data
+		%iiif_ffff_000s_ssss_000v_vvvv
+		bit 23-21	Hue
+			%000	Red ~ Yellow
+			%001	Yellow ~ Green
+			%010	Green ~ Cyan
+			%011	Cyan ~ Blue
+			%100	Blue ~ Magenta
+			%101	Magenta ~ Red
+			%110	Invalid
+			%111	Invalid
+		bit 20-16	Hue
+		bit 12-8	Saturation ($00: greyscale $1F: saturated)
+		bit  4-0	Brightness ($00: black $1F: full brightness)
+
+Ret		RGB data (luminance bit is zero)
+		%gggg_grrr_rrbb_bbb0
+		bit 15-11	Green component
+		bit 10-6	Red   "
+		bit  5-1	Blue  "
+
+	If the hue was set to an invalid value, -1 is returned.
+	
+	Converts color data from HSV format to RGB format.
+	HSV is a method of specifying colors by hue, saturation, and value.
+
+==============================================================================
+
+$13	_TPALET		Set Text Palette
+
+Arg		d1.b	Palette Code (0 - 15)
+		d1.b =	0	Text color 0
+			1	"          1
+			2	"          2
+			3	"          3
+			4～7	Soft keyboard / calculator UI 0
+			8～15	"                             1
+	d2.l	Color code
+		d2.l =	0-$ffff  Set color code
+			-1	 Check color code
+			-2	 Reset color to system setting
+
+Ret		Status (color code when argument d2.l is -1)
+	d0.l =	 0	Normal return
+		-1	Error: Color code is invalid
+		
+	Set a color in the text plane palette. When 4-7 or 8-15 are specified,
+	the same color is set for all four entries within the group.
+
+==============================================================================
+
+$14	_TPALET2	Set Text Palette (independent)
+
+Arg		d1.b	Palette Code
+		d2.l	Color Code
+			d2.l =	0 to $ffff  Set Color Code
+				-1          Get Color Code
+
+Ret		Return Status (when d2.l = -1, it is the color code)
+			d0.l =	 0	Normal return
+			-1	 Invalid Color Code
+
+	Set a color code for the text plane's palette.
+	Unlike IOCS TPALET, each palette entry can be set independently.
+
+==============================================================================
+
+$15	_TCOLOR		Set Text Plane
+
+Arg		d1.b	Plane(s) being accessed
+		d1.b =	%???1	Plane 0
+			%??10	"     1
+			%?100	"     2
+			%1000	"     3
+			%0000	:     0
+
+Ret		d1.w is clobbered.
+
+	Sets the text plane(s) to be accessed by IOCS TEXTGET($1A),
+	TEXTPUT($1B), and CLIPPUT($1C). The text plane must be set to 0 after
+	use, but if left non-zero, the correct operation of other IOCS calls
+	cannot be guaranteed.
+
+==============================================================================
+
+$16	_FNTADR		Get Font Address
+
+Arg		d1.w	Kanji code (Shift-JIS/JIS)
+	d2.b	Pattern Size
+		d2.b =	6	 6x12,12x12 dots
+			8	 8x16,16x16 "
+			12	12x24,24x24 "
+
+Ret		d0.l	Pattern address
+	d1.hw	Number of dots in X dimension of pattern
+	d1.w	Number of bytes in X dimension of the pattern - 1
+	d2.w    Number of dots in Y dimension of the pattern - 1
+
+	Get the address of the specified character font.
+	The returned address may be in the supervisor area.
+	Characters are not necessarily arranged in the order of the character
+	codes. Gaiji and 12-dot characters may not have pattern data defined.
+	
+	This IOCS call is used by the system, and is typically not used by
+	applications.
+	
+	In ROM IOCS Version 1.3 and HIOCS.X, if d2.b = 0, a value of 8 is
+	assumed. Otherwise, the behavior is wrong.
+
+==============================================================================
+
+$17	_VRAMGET	VRAM Read Bytewise
+
+Arg		d1.w	Bytes in X dimension within buffer - 1
+		d2.w	Dots in Y dimension - 1
+		d3.l	Bytes in (X direction of VRAM - X direction of buffer)
+		a1.l	Destination Buffer Address
+		a2.l	VRAM Source Address
+
+Ret		d0/d1/d2/a1/a2 may not be preserved.
+
+	Read data from VRAM into a specified buffer using byte reads.
+	When a text plane is provided as a VRAM source, the number of bytes in
+	the X direction of VRAM is 128 bytes.
+
+==============================================================================
+
+$18	_VRAMPUT	VRAM Write Bytewise
+
+Arg		d1.w	Bytes in X dimension within buffer - 1
+		d2.w	Dots in Y dimension - 1
+		d3.l	Bytes in (X direction of VRAM - X direction of buffer)
+		a1.l	Source Buffer Address
+		a2.l	VRAM Destination Address
+
+Ret		d0/d1/d2/a1/a2 may not be preserved.
+
+	Write data to VRAM from a specified buffer using byte writes.
+	When a text plane is provided as a VRAM destination, the number of bytes
+	in the X direction of VRAM is 128 bytes.
+
+==============================================================================
+
+$19	_FNTGET		Font Load
+
+Arg		d1.hw	Pattern size
+		d1.hw =	6	 6x12,12x12 dots
+			0,8	 8x16,16x16 "
+			12	12x24,24x24 "
+	d1.w	Kanji Code(Shift-JIS/JIS)
+	a1.l	Data Buffer Address (4 + bytes required for font size)
+		(0,a1)	Dots in X direction of pattern
+		(2,a1)	Dots in Y direction of pattern
+		(4,a1)	(Pattern Data)
+
+Ret		Pattern Load Destination Address (forwarding source)
+
+		(t/l note: what is (転送元) really?)
+
+	Load specified character font.
+
+==============================================================================
+
+$1a	_TEXTGET	Text VRAM Read Dot
+
+Arg		d1.w	X Coordinate
+		d2.w	Y Coordinate
+		a1.l	Data Buffer Address
+			(0,a1)	Dots in X direction of pattern
+			(2,a1)	Dots in Y direction of pattern
+			(4,a1)	(Pattern Data)
+
+	Read Text VRAM data dot-by-dot.
+	
+==============================================================================
+
+$1b	_TEXTPUT	Text VRAM Write Dot
+
+Arg		d1.w	X Coordinate
+		d2.w	Y Coordinate
+		a1.l	Data Buffer Address
+			(0,a1)	Dots in X direction of pattern
+			(2,a1)	Dots in Y direction of pattern
+			(4,a1)	Pattern Data
+
+	Write Text VRAM data dot-by-dot.
+
+==============================================================================
+
+$1c	_CLIPPUT	Text VRAM Write Dot (With Clipping)
+
+Arg		d1.w	X Coordinate
+		d2.w	Y Coordinate
+		a1.l	Data Buffer Address
+			(0,a1)	Dots in X direction of pattern
+			(2,a1)	Dots in Y direction of pattern
+			(4,a1)	Pattern Data
+		a2.l	Clipping Rectangle Buffer Address
+			(0,a2)	Leftmost X Coordinate
+			(2,a2)	Upper Y Coordinate
+			(4,a2)	Rightmost X Coordinate
+			(6,a2)	Lower Y Coordinate
+
+	Write Text VRAM data dot-by-dot with a clipping rectangle.
+
+==============================================================================
+
+$1d	_SCROLL		Set Display Coordinates
+
+Arg		d1.w	Plane Select
+		d1.w =	0	Graphics Plane 0
+			1	"              1
+			2	"              2
+			3	"              3
+			4	Graphics Plane 0 Read Coordinates Only
+			5	"              1 "
+			6	"              2 "
+			7	"              3 "
+			8	Text Plane
+			9	Text Plane Read Coordinates Only
+		d2.w	X Coordinate (when setting)
+		d3.w	Y "
+
+Ret		Display Coordinates Prior to Change
+		d0.hw	X Coordinate
+		d0.lw	Y "
+
+	Set the display coordinates for graphics and text planes.
+	If the X coordinate of a text plane is set to a position where the
+	displayed screen extends beyond the boundaries of the plane itself,
+	the display will be distorted.
+	
+	Normally, the display coordinate prior to change is returned as 0 due
+	to hardware spefications.
+
+==============================================================================
+
+$1e	_B_CURON	Cancel Cursor Pause
+
+	Cancel the cursor display pause.
+
+==============================================================================
+
+$1f	_B_CUROFF	Cursor Pause
+
+	Pause display of the cursor.
+
+==============================================================================
+
+$20	_B_PUTC		Print Character
+
+Arg		d1.w	Character Code
+
+Ret		d0.l	Cursor Position after printing
+		d0.hw	Column position
+		d0.w	Row    "
+
+	Print a character.
+	When printing Kanji, it is okay to split the first and second bytes.
+	If only one half-width character can fit at the right edge of the screen
+	and a full-width character is attempted, a half-width space is inserted,
+	and the intended kanji will be printed on a new line.
+
+==============================================================================
+
+$21	_B_PRINT	Print String
+
+Arg		a1.l	String address
+
+Ret		d0.l	Cursor position after call
+		d0.hw	Column position
+		d0.w    Row    "
+		a1.l	Pointer to null character at the end of the string
+	Print a string.
+
+==============================================================================
+
+$22	_B_COLOR	Set Text Color
+
+Arg		d1.w	Display attributes
+	d1.w =	  0	Text Palette 0 (usually black)
+		  1	"            1 (usually cyan)
+		  2	"            2 (usually yellow)
+		  3	"            3 (usually white)
+		+ 4	Emphasis
+		+ 8	Reverse
+		+12	Emphasis + Reversa
+		 -1	Get Attributes (no change)
+
+Ret		d0.b	Display attributes prior to change (if negative, the
+                        attributes are invalid)
+
+	Set the color of printed characters for IOCS B_PUTC($20), B_PIRNT($21).
+
+==============================================================================
+
+$23	_B_LOCATE	Move Text Cursor
+
+Arg		d1.w	Column position (or -1 to get the current position)
+		d2.w	Row    "
+
+Ret		d0.l	Cursor position prior to movement (if -1, input is NG)
+		d0.hw	Column Position
+		d0.w	Row    "
+
+	Moves the text cursor to the specified position.
+	
+	For ROM IOCS version 1.3, d1.l returns the same value as d0.l when
+	a coordinate is specified.
+
+==============================================================================
+
+$24	_B_DOWN_S	Move Text Cursor Down 1 Line
+
+Ret		Always 0
+
+	Moves the text cursor down by one line.
+	The screen will scroll up when the cursor is at the bottom.
+
+==============================================================================
+
+$25	_B_UP_S		Move Text Cursor Down 1 Line
+
+Ret		Always 0
+
+	Moves the text cursor up by one line.
+	The screen will scroll down when the cursor is at the bottom.
+
+==============================================================================
+
+$26	_B_UP		Move Text Cursor Up Specified Number of Lines
+
+Arg		d1.b	Number of lines to move (0 treated as 1)
+
+Ret		Always 0
+
+	Move the cursor up a specific number of lines.
+	ROM IOCS version 1.3 returns 0 if the cursor moved, and -1 if not.
+
+==============================================================================
+
+$27	_B_DOWN		Move Text Cursor Down Specified Number of Lines
+
+Arg		d1.b	Number of lines to move (0 treated as 1)
+
+Ret		Always 0
+
+	Move the cursor down a specific number of lines.
+	If the cursor can not be moved downn the specified amount, it will go to
+	the bottom line.
+
+==============================================================================
+
+$28	_B_RIGHT	Move Text Cursor Left Specified Number of Lines
+
+Arg		d1.b	Number of columns to move (0 treated as 1)
+
+Ret		Always 0
+
+	Move the cursor right a specific number of columns.
+	If the cursor can not move any further, it will stay on the right side.
+
+==============================================================================
+
+$29	_B_LEFT		Move Text Cursor Right Specified Number of Lines
+
+Arg		d1.b	Number of columns to move (0 treated as 1)
+
+Ret		Always 0
+
+	Move the cursor left a specific number of columns.
+	If the cursor can not move any further, it will stay on the left side.
+
+==============================================================================
+
+$2a	_B_CLR_ST	Erase Multiple Text Rows
+
+Arg		d1.b	Erasure range
+		d1.b =	0	From cursor to right end of last line
+			1	From left of first line to cursor position
+			2	Entire screen (after erasure, cursor moves to
+				left end of the first line)
+
+	Erase multiple lines of the screen by specifying a range.
+
+==============================================================================
+
+$2b	_B_ERA_ST	Erase Multiple Text Characters
+
+Arg		d1.b	Erasure range
+		d1.b =	0	From cursor to right edge
+			1	From left edge to cursor
+			2	Entire line
+
+Ret		d0.l =	0	Normal return
+			Other	Abnormal termination (invalid range or pos)
+			
+	Erase multiple characters on the line containing the cursor by a range.
+	The error return code is usually -1, but the return value is indefinite
+	if the ROM IOCS version is less than 1.3, and the error cause is the
+	cursor position.
+
+==============================================================================
+
+$2c	_B_INS		Insert Multiple Lines
+
+Arg		d1.b	Number of lines to insert (0 is treated as 1)
+
+Ret		Always 0
+
+	Inserts multiple lines at the cursor position. Lines below the cursor
+	are scrolled down, and the cursor moves to the left edge.
+	Note that the upper byte of d1.w must be set to 0 for ROM IOCS versions
+	less than 1.3. Otherwisem the function will not work properly.
+
+==============================================================================
+
+$2d	_B_DEL		Delete Multiple Lines
+
+Arg		d1.b	Number of lines to delete (0 is treated as 1)
+
+Ret		Always 0
+
+	Deletes multiple lines from the cursor position. Lines below the cursor
+	are scrolled up.
+	Note that the upper byte of d1.w must be set to 0 for ROM IOCS versions
+	less than 1.3. Otherwisem the function will not work properly.
+
+==============================================================================
+
+$2e	_B_CONSOL	Configure Display Range
+
+Arg		d1.l	表示開始位置(d1.l = -1 の時変更しません)
+		d1.hw	X 方向の表示開始ドット位置(16の倍数で1008以下)
+		d1.w	Y	〃		  ( 4	〃   1020 〃 )
+	d2.l	表示範囲(d2.l = -1 の時変更しません)
+		d2.hw	X 方向の表示桁数-1(0～127)
+		d2.w	Y	〃  行数-1(0～ 63)
+
+Ret		d0.l	Always 0
+	d1.l	変更前の表示開始オフセット(X/8+Y*128)
+	d2.l	〃	表示範囲
+
+	テキスト画面の表示範囲を設定する. カーソルは先頭行左端に移動する.
+	IOCS $20～$2d で扱う座標は設定した表示範囲の左上が(0,0)となり、表示
+	範囲内に影響する. ただし、スクロール/画面クリアは表示範囲外の桁に
+	影響が出る. 表示範囲だけスクロールさせるには IOCS B_CONMOD($ad) の
+	モード 18:ソストコピースクロールを指定する.
+	IOCS.X 組み込み時は引数の d1.hw に 8 の倍数を指定出来るが、ROM IOCS
+	version 1.3 未満で 8 の倍数を指定するとアドレスエラーが発生する.
+
+==============================================================================
+
+$2f	_B_PUTMES	Print String at Specified Coordinates
+
+Arg		d1.b	Display attributes
+	d1.b =	  0	テキストパレット 0 (通常黒)
+		  1		〃	 1 (〃	水色)
+		  2		〃	 2 (〃	黄色)
+		  3		〃	 3 (〃	白)
+		+ 4	    強調
+		+ 8	逆転
+		+12	逆転強調
+	d2.w	表示Column Position(絶対座標:0～127)
+	d3.w	表示行位置(絶対座標:0～ 63)
+	d4.w	表示桁数-1
+	a1.l	表示String address
+
+Ret		d0.l	不定(内容は保証されない)
+	d2.w	表示後のColumn Position
+	d4.w	不定(内容は保証されない)
+	a1.l	文字列の終端のアドレス(指定した文字列が表示桁数より長ければ、
+		最後に表示した文字の次のアドレス)
+
+	指定した絶対座標から文字列を直接表示する. ファンクションキー行表示用で、
+	IOCS B_CONSOL($2e) の影響を受けない.
+	桁数以上は表示しない(全角文字が表示出来ない場合は半角スペースが表示
+	される). 文字列が指定の桁数未満の長さの場合、残りは半角スペースを表示
+	する. Character Code $fe は空白が表示される.
+	テキスト画面の右端まで行ったらそれ以上表示せず、スクロールもしない.
+
+==============================================================================
+
+$30	_SET232C	RS-232C Parameter Configuration
+
+Arg		d1.w	RS-232C 設定値(d1.w = -1 の時 現在の設定を調べます)
+		bit 15～14	ストップビット(1:1bit 2:1.5bit 0,3:2bit)
+		bit 13～12	パリティ(1:奇数 3:偶数 0,2:なし)
+		bit 11～10	ビット長(0:5bit以下 1:6bit 2:7bit 3:8bit)
+		bit      9	XON/XOFF処理(0:OFF 1:ON)
+		bit	 8	 SI/SO  処理(    〃    )
+		bit  7～ 0	BPS(0:  75 1: 150 2: 300 3: 600 4:1200
+				    5:2400 6:4800 7:9600 8:17361)
+
+Ret		変更前の設定
+
+	RS-232C のモードを設定する.
+	BPS に範囲外の値を指定した場合、1200BPS として初期化する.
+	ROM IOCS では、SI/SO処理が正Always動作しないので使用しないこと.
+	BPS の 8 番は ROM IOCS version 1.3 だけで使用可能.
+
+==============================================================================
+
+$31	_LOF232C	RS-232C Rx Byte Count
+
+Ret		d0.w	RS-232C 受信データ数
+
+	RS-232C の受信バッファ内のデータ数を調べる.
+
+==============================================================================
+
+$32	_INP232C	RS-232C Get Rx Data
+
+Ret		d0.w	RS-232C 受信データ(下位 8 ビット)
+
+	RS-232C からデータを受信する.
+	データを受信していなければ受信するまで待つ.
+
+==============================================================================
+
+$33	_ISNS232C	RS-232C Inspect Rx Data
+
+Ret		d0.l =	0	受信データなし
+		$100??	〃	  あり($?? は受信データ)
+
+	RS-232C からデータを受信しているか調べる.
+	受信データバッファの内容は変化ない.
+
+==============================================================================
+
+$34	_OSNS232C	RS-232C Tx Clear-to-Send
+
+Ret		d0.l =	0	送信不可能
+		4	 〃 可能(バッファが空で、XON でもない)
+
+	RS-232C にデータが送信可能か調べる.
+
+==============================================================================
+
+$35	_OUT232C	RS-232C Tx Data
+
+Arg		d1.b	送信データ
+
+	RS-232C にデータを送信する.
+	データが送信不可能であれば送信可能になるまで待つ.
+
+==============================================================================
+
+$36	(unused)	Mouse data processing address
+
+Arg		d1.l	処理アドレス(0 の時取り消し)
+	d2.w	カウンタ初期値
+
+	マウスからデータを受信した時に呼び出されるサブルーチンのアドレスを設定
+	する. 通常はマウス処理 IOCS で使用するデータの書き換えを行うアドレスが
+	設定されている.
+	設定したアドレスが呼び出される時は、a1.l が示すアドレスからの 3 バイト
+	にマウスからの受信データがセットされている.
+	カウンタの値を大きくすると呼び出される間隔が長くなる(1 の時最短).
+	処理アドレスに 0 を指定すると、標準アドレスが設定される.
+
+==============================================================================
+
+$37	(unused)	Processing Address for ESC[>-based Escape Sequences
+
+Arg		d1.l	処理アドレス(0 の時取り消し)
+
+Ret		変更前のアドレス(ROM IOCS version 1.3 のみ)
+
+	エスケープシーケンスのうち、ESC[> 系の拡張処理を行うサブルーチンのアド
+	レスを設定する. 処理アドレスに 0 を指定すると、標準アドレスが設定される.
+	設定したアドレスが呼び出される時は、d0.w に ESC[> の次の 2 バイトデータ、
+	a0.l に ESC[> のアドレスがセットされている.
+	ROM IOCS version 1.3のみ、変更前のアドレスを返す.
+
+==============================================================================
+
+$38	_SETFNTADR	Set Gaiji (External Charater) Font Address
+
+Arg		d1.l	フォントアドレス(負数でアドレス収得のみ)
+	d2.l	外字グループ番号
+		d2.l =	0	16x16ドット	JIS:$2c21～$2d7e
+			1	16x16  〃	   :$7621～$777e
+			2	 8x16  〃	   :$f400～$f5ff
+			3	24x24  〃	   :$2c21～$2d7e
+			4	24x24  〃	   :$7621～$777e
+			5	12x24  〃	   :$f400～$f5ff
+			6	 6x12  〃(半角)
+			7	 8x 8  〃(1/4角)
+			8	 8x16  〃(半角)
+			9	16x16  〃(全角)
+			10	12x12  〃(1/4角)
+			11	12x24  〃(半角)
+			12	24x24  〃(全角)
+			13	16x16  〃(全角非漢字)
+			14	16x16  〃(第１水準文字)
+			15	16x16  〃(第２水準文字)
+			0x80	拡張外字処理アドレスを得る
+
+Ret		変更前のアドレス
+	アドレス設定時に -1 が返った時はエラー(奇数アドレスを指定した場合等).
+
+	外字フォントデータのアドレスを設定する.
+	HIOCS.X 組み込み時には d2.l が 6 以上で普通の文字のフォントも設定可能.
+	ROM IOCS では奇数アドレスを設定してもエラーにならないので注意すること.
+
+==============================================================================
+
+$39	(unused)	BEEP Sound PCM Data Setting
+
+Arg		d1.l	PCM データアドレス
+	d2.w	〃	  サイズ
+
+Ret		d0.l	Always 0
+	d1.l	変更前の PCM データアドレス
+	d2.w		〃	   サイズ
+
+	BEEP 音用の PCM データのアドレスと長さを設定する.
+
+==============================================================================
+
+$3a	(unused)	Set Printer Parameters
+
+Arg		a1.l	パラメータアドレス(0 で ROM)
+
+	プリンタ処理 IOCS で使用するパラメータを設定する.
+	パラメータアドレスに 0 を指定すると ROM 内の初期値を設定する.
+	パラメータの内容は以下の通り.
+
+offset	size
+$00	1.l	T-VRAM プレーン 0 アドレス($e00000)
+$04	1.w	Y 方向ドット数÷12-1(41)
+$06	1.l	拡大ビットイメージ出力時の Y 方向余りラインパターン
+$0a	1.w	Y 方向ドット数÷24-1(21)
+$0c	1.l	縮小ビットイメージ出力時の Y 方向余りラインパターン
+$10	1.w	X 方向ドット数÷ 8-1(96)
+$12	8.b	漢字モード指定コード
+$1a	8.b	〃	  解除  〃
+$22	4.b	LF のコード
+$26	6.b	改行幅 16/120インチのコード
+$2c	6.b	改行幅を電源投入時の状態に戻すコード
+$32	6.b	改行幅 10/120インチのコード
+$38	6.b	〃	5/150	〃
+$3e	8.b	ビットイメージ出力コード(1536×24ドット出力)
+$46	8.b	〃			( 768×24    〃    )
+$4e	8.b	〃			(  18×24    〃    )
+$56	8.b	〃			(  36×24    〃    )
+$5e	1.b	0:MSB～LSB 1:LSB～MSB の順で出力
+$5f	1.b	半角ビットイメージ出力時の左右の空白ドット数
+$60	1.b	全角〃
+$61	1.b	モード(bitの値が1ならビットイメージで出力する)
+		bit 4:半角文字
+		bit 3:第一水準漢字及び全角非漢字
+		bit 2:第二水準漢字
+		bit 1:第一外字
+		bit 0:第二外字
+
+	$06,$0c は下位 3 バイトのみ有効で、左端から 512/($04,$0a の値)の余り
+	のドット数だけビットを 1 にする.
+	$12～$56 のコードは、先頭 1 バイトでコードのバイト数を指定し、残りで
+	コードを指定する.
+	なお、$22 からの LF コード指定バッファは PRNDRVn.SYS を組み込むとサイ
+	ズが 2 バイトに縮まり、$24 から CR のコードを指定するようになっている.
+
+==============================================================================
+
+$3b	_JOYGET		Get Joystick Input
+
+Arg		d1.w	ジョイスティック番号(0/1)
+
+Ret		ジョイスティックデータ(0 の時押されていて、1 の時離されています.)
+		bit 7	Always 1
+		bit 6	ボタン	1
+		bit 5	〃	2
+		bit 4	Always 1
+		bit 3	レバー	右
+		bit 2	〃	左
+		bit 1	〃	下
+		bit 0	〃	上
+
+	ジョイスティックのデータを読む.
+	無効なジョイスティック番号を指定した場合は、Always 0 が返ります.
+
+==============================================================================
+
+$3c	_INIT_PRN	Initialize Printer
+
+Arg		d1.hb	1 ページの行数-1(-1で指定なし)
+	d1.b	1 行の桁数-1	(     〃     )
+
+Ret		d0.l =	0	出力不可能
+		$20	出力可能
+
+	プリンタポートを初期化し、同時にプリンタに出力可能か調べる.
+	引数の d1.w は IOCS _OUTPRN($3f) 用のプリントフォーマット.
+
+==============================================================================
+
+$3d	_SNSPRN		Check if Printer Output is Available
+
+Ret		d0.l =	0	出力不可能
+		$20	出力可能
+
+	プリンタに出力可能か調べる.
+
+==============================================================================
+
+$3e	_OUTLPT		Direct Printer Output
+
+Arg		d1.b	出力データ
+
+	プリンタに直接データを出力する. 漢字処理はせず、また自動改行/改頁しない.
+	通常はプリンタに出力が完了するまで処理が戻らない.
+	ROM IOCS version 1.3 未満では、アクセラレータ等で高速動作中に使用する
+	とウェイト不足で正常動作しない場合がある.
+
+==============================================================================
+
+$3f	_OUTPRN		Printer Output
+
+Arg		d1.b	出力データ
+
+Ret		d1.b is clobbered.
+
+	プリンタに文字を出力する. 漢字処理は S-JIS で行い、2 バイト文字の場合は
+	1 バイトずつ 2 回に分けて出力すること.
+	通常はプリンタに出力が完了するまで処理が戻らない.
+
+==============================================================================
+
+$40	_B_SEEK		Disk Seek
+
+Arg		d1.hb	PDA
+		d1.hb =	$10～$13	2DD/8	0～ 3
+			$30～$33	2DD/9	〃
+			$70～$73	2HQ	〃
+			$80～$8f	SASI-HD	0～15
+			$90～$93	2HD	0～ 3
+	d1.b	モード(SASI-HD の時は意味がありません)
+		bit 6	MFM/MFM モード切り換え	0:FM	1:MFM(通常は 1)
+		bit 5	リトライ		0:リトライしない	1:する
+		bit 4	シーク			0:シークしない		1:する
+		リトライする場合、5 回シークせずにリトライし、その後 5 回
+		リキャリブレート/シークをしてからリトライします.
+	d2.l	目的シーク位置(SASI-HD の時は 256 バイト単位のレコード番号)
+		bit 31～24	セクタ長	0:128	1:256	2:512	3:1024(バイト)
+		bit 23～16	トラック(0～76)
+		bit 15～ 8	サイド(0/1)
+		bit  7～ 0	セクタ(1～8)
+
+Ret		SASI-HD	: ステータス
+		d0.l =	正数	Normal return
+			-1	規定時間内に応答がなかった
+			-3	エラー
+			その他	異常終了(最下位バイトがエラーコード)
+	2HD-FD	: FDC ステータス
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16	コマンド終了時のシリンダ番号(PCN)
+
+	ディスクの指定位置までシークする.
+	SASI-HD のシークで返値が $ffffff?? の場合、$?? はセンスバイトの先頭バ
+	イトを示す.
+	PDA の $10～13,$30～$33,$70～$73 は ROM IOCS version 1.3 若しくは
+	FDDEVICE.X 常駐時のみ使用可能. また、ROM IOCS version 1.3 の場合、
+	SASI-HD は SCSI に接続されているのものが対象となる.
+
+==============================================================================
+
+$41	_B_VERIFY	Disk Verify
+
+Arg		d1.hb	PDA
+	d1.b	モード(SASI-HD の時は意味がありません)
+	d2.l	目的検査位置
+	d3.l	検査するバイト数
+	a1.l	検査するデータのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	SASI-HD	: ステータス(負数で異常終了)
+		d0.l =	正数	Normal return
+			-1	規定時間内に応答がなかった
+			-2	データが不一致
+			-3	エラー
+			その他	異常終了(最下位バイトがエラーコード)
+	2HD-FD	: FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	データの比較検査を行なう.
+
+	2HD-FD との比較の場合、FDC の SCAN EQUAL 命令を使用してデータの比較を
+	行うので、データが $ff である時はそのバイトの比較は行われずに等しいも
+	のとして扱われる.
+
+==============================================================================
+
+$42	_B_READDI	Read Disk Diagnostics
+
+Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
+	d1.b	モード
+	d2.l	目的読み込み位置
+	d3.l	読み込むバイト数
+	a1.l	読み込むバッファのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	2HD の診断の為のディスク読み出しをする. 通常の読み込みでは使わない.
+
+==============================================================================
+
+$43	_B_DSKINI	Initialize Disk
+
+Arg		d1.hb	PDA
+	d2.l	モーターオフまでの時間(SASI-HD の時は意味がありません)
+	a1.l	SASI-HD	: アサインドライブパラメータのデータアドレス
+		2HD-FD	: SPECIFY コマンドのデータアドレス
+
+Ret		SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス
+		bit 31～24	リザルトステータス 3(ST3)
+		bit 23～ 0	不定
+
+	ドライブを初期化する.
+	モーターオフまでの時間は 1/100 秒単位で、0 を指定すると標準値( 2 秒)になる.
+	a1.l に 0 を指定すると、標準の設定が使用される.
+
+==============================================================================
+
+$44	_B_DRVSNS	Check Drive Status
+
+Arg		d1.hb	PDA
+
+Ret		SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス
+		bit 31～24	リザルトステータス 3(ST3)
+		bit 23～ 0	不定
+
+	ディスクの状態を調べる.
+
+==============================================================================
+
+$45	_B_WRITE	Write to Disk
+
+Arg		d1.hb	PDA
+	d1.b	モード(SASI-HD の時は意味がありません)
+	d2.l	目的書き込み位置
+	d3.l	書き込むバイト数
+	a1.l	書き込むデータのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	ディスクにデータを書き込む.
+	注意:OS が行っているバッファリング処理とは無関係に動作するので、OS が
+	バッファ中にデータを保持している場合、ディスク上のデータは内容が保証さ
+	れない場合がある.
+
+==============================================================================
+
+$46	_B_READ		Read from Disk
+
+Arg		d1.hb	PDA
+	d1.b	モード(SASI-HD の時は意味がありません)
+	d2.l	目的読み込み位置
+	d3.l	読み込むバイト数
+	a1.l	読み込むバッファのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	ディスクからデータを読み込む.
+	注意:OS が行っているバッファリング処理とは無関係に動作するので、OS が
+	バッファ中にデータを保持している場合、ディスク上のデータは内容が保証さ
+	れない場合がある.
+
+==============================================================================
+
+$47	_B_RECALI	Disk Recalibration
+
+Arg		d1.hb	PDA
+	d1.b	モード(SASI-HD の時は 0 にします)
+		d1.b =	0	トラック 0 へのシーク
+			-1	強制レディ状態での検査
+
+Ret		SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16	シリンダ番号(C)
+
+	トラック 0 へのシーク若しくは強制レディ状態での検査を行なう.
+	後者を実行後、ST0 の bit 4(EQUIPMENT CHECK) が 1 になっていた場合は
+	指定のドライブは存在しない.
+	2HD-FD の ドライブの有無はこの IOCS コールでしか検査出来ない.
+
+==============================================================================
+
+$48	_B_ASSIGN	Set Alternate Track for Hard Disk
+
+Arg		d1.hb	PDA(2HD-FD:$90～$93 は指定できません)
+	d2.l	レコード番号
+	d3.l	インタリーブコード
+	a1.l	代替トラック指定データのアドレス
+		(0,a1)	代替トラック番号上位バイト
+		(1,a1)		〃	中位〃
+		(2,a1)		〃	下位〃
+		(3,a1)	Always 0
+
+Ret		ステータス(負数で異常終了)
+
+	ハードディスクの代替トラックを設定する.
+
+==============================================================================
+
+$49	_B_WRITED	Write Corrupt Data to 2HD (Floppy)
+
+Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
+	d1.b	モード
+	d2.l	目的書き込み位置
+	d3.l	書き込むバイト数
+	a1.l	書き込むデータのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	ディスクに破損データを書き込む. 通常の書き込みでは使わない.
+
+==============================================================================
+
+$4a	_B_READID	Read Corrupt Data from 2HD (Floppy)
+
+Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
+	d1.b	モード
+	d2.l	目的読み出し位置(トラックとサーフェスの指定のみ)
+		bit 31 を 1 にすると検出IDを収得する.
+
+Ret		d0.l	FDC ステータス
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+	d2.l	読み出したID(d2.l の bit 31=1 の時のみ)
+
+	2HD-FD の ID 情報を読み出す.
+
+==============================================================================
+
+$4b	_B_BADFMT	Disable Hard DIsk Corrupt Tracks
+
+Arg		d1.hb	PDA(2HD-FD:$90～$93 は指定できません)
+	d2.l	レコード番号
+	d3.b	インタリーブコード(1 または 6)
+
+Ret		ステータス(負数で異常終了)
+
+	ハードディスクの破壊トラックを使用不能にする.
+
+==============================================================================
+
+$4c	_B_READDL	Read Corrupt Data from 2HD (Floppy)
+
+Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
+	d1.b	モード
+	d2.l	目的読み込み位置
+	d3.l	読み込むバイト数
+	a1.l	読み込むバッファのアドレス
+
+Ret		d2/d3/a1 may not be preserved.
+	FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	ディスクから破損データを読み込む. 通常の読み込みでは使わない.
+
+==============================================================================
+
+$4d	_B_FORMAT	Format Disk
+
+Arg		d1.hb	PDA
+	d1.b	モード(SASI-HD の時は意味がありません)
+	d2.l	目的フォーマット位置(SASI-HD の時はレコード番号)
+		bit 31～24	セクタ長	0:128	1:256	2:512	3:1024(バイト)
+		bit 23～16	トラック(0～76)
+		bit 15～ 8	サイド(0/1)
+		bit  7～ 0	各セクタのデータ部に書き込む値
+	d3.l	SASI-HD	: インタリーブコード(1 または 6)
+		2HD-FD	: ID データのバイト数
+	a1.l	ID データのアドレス(SASI-HD の時は意味がありません)
+
+Ret		SASI-HD	: ステータス(負数で異常終了)
+	2HD-FD	: FDC ステータス(-1 でパラメータが異常)
+		bit 31～24	リザルトステータス 0(ST0)
+		bit 23～16		〃	   1(ST1)
+		bit 15～ 8		〃	   2(ST2)
+		bit  7～ 0	シリンダ番号(C)
+
+	ディスクの物理フォーマットを行なう.
+	2HD-FD のフォーマット時に使用する ID データの内容は、以下のテーブルを
+	セクタ数だけ繰り返したもの.
+
+offset	size
+0	1.b	トラック番号
+1	1.b	サイド(0/1)
+2	1.b	セクタ番号
+3	1.b	セクタ長(128x2バイト)
+
+	通常トラック番号は 0～76、セクタ番号は 1～8、セクタ長は 0～3 になる.
+
+==============================================================================
+
+$4e	_B_DRVCHK	2HD (Floppy) Check Drive Status
+
+Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
+	d2.w	機能番号
+		d2.w =	0	状態検査
+			1	排出(排出禁止状態では排出不可)
+			2	排出禁止 1
+			3	 〃 許可 1
+			4	ディスクがセットされていない時 LED 点滅
+			5			〃		   消灯
+			6	排出禁止 2(OS 用なのでユーザーは使用禁止)
+			7	 〃 許可 2(〃)
+			8	排出検査  (〃)
+			9	状態検査 2
+
+Ret		d2.w = 0～7,9 の時、ディスクの状態
+		bit 7	LED 点滅
+		bit 6	排出禁止
+		bit 5	排出禁止 2(OS バッファ有り)
+		bit 4	〃	 1(ユーザー指定)
+		bit 3	書き込み禁止
+		bit 2	ノットレディ
+		bit 1	メディア挿入
+		bit 0	メディア誤挿入
+		ノットレディとライトプロテクトは d2.w = 0 の場合のみ有効.
+		また、この時メディア未挿入なら両方のビットが 1 になる.
+	d2.w = 8 の時、前回の検査後に排出したか(1:していない -1:した)
+
+	2HD-FD の状態を参照/設定する.
+
+==============================================================================
+
+$4f	_B_EJECT	Eject Disk
+
+Arg		d1.hb	PDA
+
+Ret		終了コード(負数なら異常終了)
+	2HD-FD の時は意味がありません
+
+	2HD-FD を排出若しくは SASI-HD をシッピングする.
+	排出禁止状態でも排出できるが、OS のバッファリング処理とは無関係に動作
+	するので、OS がバッファ中にデータを保持している場合排出を行うとディス
+	クの内容が保証されなくなるため、排出してはいけない.
+
+==============================================================================
+
+$50	_DATEBCD	Binary to BCD Conversion for Date Data
+
+Arg		d1.l	日付データ(バイナリ)
+		$0y_yy_mm_dd
+		bit 27～16	年バイナリ(1980～2079)
+		bit 15～ 8	月〃	  (1～12)
+		bit  7～ 0	日〃	  (1～31)
+
+Ret		変換後の日付データ(BCD)
+		$uw_yy_mm_dd
+		bit 31～28	閏年カウンタ(0:今年が閏年 1:3年後 2:2年後 3:1年後)
+		bit 27～24	曜日カウンタ(0:日曜日 1:月曜日 … 6:土曜日)
+		bit 23～16	年 BCD 2 桁($00～$99)
+		bit 15～ 8	月 〃	   ($01～$12)
+		bit  7～ 0	日 〃	   ($01～$31)
+	ただし、日付が異常な場合は -1 が返る.
+
+	日付をバイナリから BCD に変換する.
+	閏年カウンタは、年カウンタとともに加算される.
+
+==============================================================================
+
+$51	_DATESET	Set Date
+
+Arg		日付データ(BCD)
+
+Ret		Always 0
+
+	時計に日付を設定する. ただし、正しい日付の指定であるかは検査されない.
+	X680x0 のクロック IC(RTC) は BCD 形式のデータを設定しなければならない
+	ので、IOCS DATEBCD($50) でバイナリの日付を BCD に変換した後にこのコー
+	ルで設定する.
+
+==============================================================================
+
+$52	_TIMEBCD	Binary to BCD Conversion for Time Data
+
+Arg		d1.l	時刻データ(バイナリ)
+		$00_hh_mm_ss
+		bit 23～16	時バイナリ(0～23)
+		bit 15～ 8	分〃	  (0～59)
+		bit  7～ 0	秒〃	  (0～59)
+
+Ret		時刻データ(BCD)
+		$0t_hh_mm_ss
+		bit 27～24	1(システム規定:24時間計であることを表す)
+		bit 23～16	時 BCD 2 桁(0～23)
+		bit 15～ 8	分 〃	  (0～59)
+		bit  7～ 0	秒 〃	  (0～59)
+	ただし、時刻が異常な場合は -1 が返る.
+
+	時刻をバイナリから BCD に変換する.
+
+==============================================================================
+
+$53	_TIMESET	Set Time
+
+Arg		時刻データ(BCD)
+
+Ret		Always 0
+
+	時計に時刻を設定する. ただし、正しい時刻の指定であるかは検査されない.
+
+==============================================================================
+
+$54	_DATEGET	Get Date
+
+Ret		日付データ(BCD)
+		$0w_yy_mm_dd
+		bit 27～24	曜日カウンタ
+		bit 23～16	年 BCD 2 桁($00～$99)
+		bit 15～ 8	月 〃	   ($01～$12)
+		bit  7～ 0	日 〃	   ($01～$31)
+
+	時計から日付を読み込む.
+
+==============================================================================
+
+$55	_DATEBIN	BCD to Binary Conversion for Date Data
+
+Arg		日付データ(BCD)
+		$0w_yy_mm_dd
+		bit 27～24	曜日カウンタ
+		bit 23～16	年 BCD 2 桁($00～$99)
+		bit 15～ 8	月 〃	   ($01～$12)
+		bit  7～ 0	日 〃	   ($01～$31)
+
+Ret		変換後の日付データ(バイナリ)
+		$wy_yy_mm_dd
+		bit 31～28	曜日カウンタ
+		bit 27～16	年バイナリ(1980～2079)
+		bit 15～ 8	月〃	  (1～12)
+		bit  7～ 0	日〃	  (1～31)
+
+	日付データを BCD からバイナリに変換する.
+
+==============================================================================
+
+$56	_TIMEGET	Get Time
+
+Ret		時刻データ(BCD)
+
+	時計から時刻を読み込む.
+
+==============================================================================
+
+$57	_TIMEBIN	BCD to Binary Conversion for Time Data
+
+Arg		時刻データ(BCD)
+
+Ret		変換後の時刻データ(バイナリ)
+
+	時刻データを BCD からバイナリに変換する.
+
+==============================================================================
+
+$58	_DATECNV	String to Binary Conversion for Date Data
+
+Arg		a1.l	日付を表すString address(区切りは '/' と '-' のどちらでもよい)
+		形式は 'yyyy/mm/dd',0 または 'yy-mm-dd',0
+
+Ret		d0.l	変換後の日付データ(バイナリ)
+		ただし、日付を表す文字列が異常な場合は d0.l = -1 が返る.
+	a1.l	文字列末尾(変換に失敗した場合、内容は保証されない)
+
+	日付データを文字列からバイナリに変換する. ただし、正しい日付の指定であ
+	るかは検査されない. 年が 80～99、0～79 である時は下二桁の指定と見なし
+	てそれぞれ 1900、2000 を足した値を返す.
+	数値の先頭にある空白と '0' は読み飛ばされる. 区切りは実際にはどの記号
+	を使用しても正Always動作する.
+
+==============================================================================
+
+$59	_TIMECNV	String to Binary Conversion for Time Data
+
+Arg		a1.l	時刻を表すString address(区切りは ':' のみ)
+		形式は 'hh:mm:ss',0
+
+Ret		d0.l	変換後のデータ(バイナリ)
+		ただし、時刻を表す文字列が異常な場合は d0.l = -1 が返る.
+	a1.l	文字列末尾(変換に失敗した場合、内容は保証されない)
+
+	時刻データを文字列からバイナリに変換する.
+	数値の先頭にある空白と '0' は読み飛ばされる. 区切りは実際にはどの記号
+	を使用しても正Always動作する.
+
+==============================================================================
+
+$5a	_DATEASC	Binary to String Conversion for Date Data
+
+Arg		d1.l	日付データ(バイナリ)
+		$fy_yy_mm_dd
+		bit 31～28	文字列形式
+				0	'yyyy/mm/dd',0
+				1	'yyyy-mm-dd',0
+				2	'yy/mm/dd',0
+				3	'yy-mm-dd',0
+		bit 27～16	年バイナリ(1980～2079)
+		bit 15～ 8	月〃	  (1～12)
+		bit  7～ 0	日〃	  (1～31)
+	a1.l	文字列バッファのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	エラー
+	a1.l	文字列終端の 0 のアドレス
+
+	日付データをバイナリから文字列に変換する.
+	文字列バッファは 9 または 11 バイト以上必要.
+
+==============================================================================
+
+$5b	_TIMEASC	Binary to String Conversion for Time Data
+
+Arg		d1.l	時刻データ(バイナリ)
+		$00_hh_mm_ss
+		bit 23～16	時バイナリ(0～23)
+		bit 15～ 8	分〃	  (0～59)
+		bit  7～ 0	秒〃	  (0～59)
+	a1.l	文字列バッファのアドレス(形式は 'hh:mm:ss',0)
+
+Ret		d0.l =	0	Normal return
+		-1	エラー
+	a1.l	文字列終端の 0 のアドレス
+
+	時刻データをバイナリから文字列に変換する.
+	文字列バッファは 9 バイト以上必要.
+
+==============================================================================
+
+$5c	_DAYASC		Binary to String Conversion for Day-of-Week Data
+
+Arg		d1.l	曜日データ(0:日曜日 1:月曜日 … 6:土曜日)
+	a1.l	文字列バッファのアドレス(形式は '？',0)
+
+Ret		d0.l	Always 0
+	a1.l	文字列終端の 0 のアドレス
+
+	曜日データをバイナリから文字列に変換する.
+	文字列バッファは 3 バイト以上必要.
+
+==============================================================================
+
+$5d	_ALARMMOD	Alarm Enable / Disable
+
+Arg		d1.l	アラームの設定
+		d1.l =	0	禁止
+			1	許可
+			2	現在の状態を調べる
+
+Ret		現在の状態(0/1)
+
+	アラームの禁止/許可を設定する. 設定は SRAM に記録される.
+
+==============================================================================
+
+$5e	_ALARMSET	Set Alarm
+
+Arg		d1.l	アラーム時間
+		$0wddhhmm
+		bit 27～24	曜日(0:日曜日 1:月曜日 … 6:土曜日 $f:無指定)
+		bit 23～16	日 BCD 2 桁($01～$31,$ff:無指定)
+		bit 15～ 8	時 〃	   ($00～$23,	〃     )
+		bit  7～ 0	分 〃	   ($00～$59,	〃     )
+	d2.l	電源オフまでの時間(分)
+	a1.l	テレビコントロールコード若しくは処理アドレス
+		a1.l =	-1	ディスプレイ制御しない
+			0	ディスプレイ電源オン/コンピュータモード
+			1～$3f	指定の数値でテレビコントロール
+			その他	処理アドレス(偶数アドレスかつ先頭が $60:bra であること)
+
+Ret		Always 0
+
+	アラーム時間と処理内容を設定し、アラームを許可する. 設定は SRAM に記録
+	される.
+	曜日を $f、日/時/分を $ff にすると、それぞれが無指定になる. ただし、全
+	てを無指定にしないこと.
+	電源オフまでの時間に 0 を指定すると、電源オフしない.
+
+==============================================================================
+
+$5f	_ALARMGET	Get Alarm Status
+
+Ret		d0.l	処理アドレス
+	d1.l	アラーム時間
+	d2.l	電源オフまでの時間(分)
+
+	アラーム時間と処理内容を調べる.
+
+==============================================================================
+
+$60	_ADPCMOUT	ADPCM Out
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	d2.l	再生データのバイト数
+	a1.l	〃	    アドレス
+
+Ret		d0/d2/a1 may not be preserved.
+
+	ADPCM を再生する. データが $ff00 バイト以下の場合はすぐに戻る.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+
+==============================================================================
+
+$61	_ADPCMINP	ADPCM In
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	d2.l	録音バッファのバイト数
+	a1.l	〃	      アドレス
+
+Ret		d0/d2/a1 may not be preserved.
+
+	ADPCM を録音する. データが $ff00 バイト以下の場合はすぐに戻る.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	データ自体はモノラルで入力するが、モニタ出力を出力モードで指定出来る.
+
+==============================================================================
+
+$62	_ADPCMAOT	ADPCM Out (Linear Array)
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	d2.l	チェーンテーブルの個数
+	a1.l		〃	  アドレス
+
+	アレイチェーンによって ADPCM を再生する.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	アレイチェーンテーブルの内容は、以下のチェーンテーブルを繰り返したもの.
+
+offset	size
+0	1.l	再生データのアドレス
+4	1.w	〃	    バイト数(1～$ffff)
+
+==============================================================================
+
+$63	_ADPCMAIN	ADPCM In (Linear Array)
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	d2.l	チェーンテーブルの個数
+	a1.l		〃	  アドレス
+
+	アレイチェーンによって ADPCM を録音する.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	アレイチェーンテーブルの内容は、以下のチェーンテーブルを繰り返したもの.
+
+offset	size
+0	1.l	録音バッファのアドレス
+4	1.w	〃	      バイト数(1～$ffff)
+
+==============================================================================
+
+$64	_ADPCMLOT	ADPCM Out (Linked List)
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	a1.l	チェーンテーブルのアドレス
+
+	リンクアレイチェーンによって ADPCM を再生する.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	リンクアレイチェーンテーブルの内容は、以下のチェーンテーブルを連結したもの.
+
+offset	size
+0	1.l	再生データのアドレス
+4	1.w	〃	    バイト数(1～$ffff)
+6	1.l	次のテーブルのアドレス(0 でテーブルの終わり)
+
+==============================================================================
+
+$65	_ADPCMLIN	ADPCM In (Linked List)
+
+Arg		d1.w	ウェイトモード/周波数/出力モード
+		bit     15	ウェイトモード(0:通常 1:ノーウェイト)
+		bit 10～ 8	サンプリング周波数
+				(0:3.9kHz 1:5.2kHz 2:7.8kHz 3:10.4kHz 4:15.6kHz)
+		bit  1～ 0	出力モード(0:なし 1:左 2:右 3:左右)
+	a1.l	チェーンテーブルのアドレス
+
+	リンクアレイチェーンによって ADPCM を録音する.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	リンクアレイチェーンテーブルの内容は、以下のチェーンテーブルを連結したもの.
+
+offset	size
+0	1.l	録音バッファのアドレス
+4	1.w	〃	      バイト数(1～$ffff)
+6	1.l	次のテーブルのアドレス(0 でテーブルの終わり)
+
+==============================================================================
+
+$66	_ADPCMSNS	ADPCM Get Status
+
+Ret		実行状態
+	d0.l =	$00	何も実行していない
+		$02	IOCS ADPCMOUT($60) を実行中
+		$04	IOCS ADPCMINP($61) 〃
+		$12	IOCS ADPCMAOT($62) 〃
+		$14	IOCS ADPCMAIN($63) 〃
+		$22	IOCS ADPCMLOT($64) 〃
+		$24	IOCS ADPCMLIN($65) 〃
+
+	ADPCM の実行状態を調べる.
+
+==============================================================================
+
+$67	_ADPCMMOD	ADPCM Execution Control
+
+Arg		d1.l	制御内容(0:終了 1:中断 2:再開)
+
+Ret		d0.l =	0	Normal return
+		-1	制御モードが不正
+
+	ADPCM の実行を制御する.
+	ROM IOCS では、ショートカットで呼び出すと割り込み禁止状態になったまま
+	で帰るので注意すること.
+
+==============================================================================
+
+$68	_OPMSET		OPM Set Register
+
+Arg		d1.b	レジスタ番号
+	d2.b	データ
+
+Ret		d2.b is clobbered.
+
+	OPM に書き込める状態になるまで待ってから、レジスタにデータを書き込む.
+	レジスタ $1b に書き込む場合、汎用出力のモードは変更できない.
+
+==============================================================================
+
+$69	_OPMSNS		OPM Get Status
+
+Ret		d0.b	ステータス
+		bit 7	Busy フラグ(0 で書き込み可能)
+		bit 1	タイマ A オーバーフロー(1 の時オーバーフローが発生)
+		bit 0	  〃   B 〃
+
+	OPM のステータスを読み込む.
+
+==============================================================================
+
+$6a	_OPMINTST	OPM Set Interrupt Handler
+
+Arg		a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定/禁止した
+		その他	すでに使用中
+
+	OPM による割り込みを設定する. MFP のみ制御するので、OPM に対しても設定
+	する必要がある.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みの処理アドレスが $01000000 以上(最上位バイトが 0 以外)で割り込
+	みが未使用と見なされるが、ROM IOCS version 1.3 で vbr が有効になってい
+	る場合は処理アドレスが $00ff0770 の時のみ未使用と見なされる.
+
+==============================================================================
+
+$6b	_TIMERDST	Timer-D Set Interrupt Handler
+
+Arg		d1.hb	単位時間(1:1.0 2:2.5 3:4.0 4:12.5 5:16.0 6:25.0 7:50.0 μ秒単位)
+	d1.b	カウンタ(0 の時は 256 として扱う)
+	a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定/禁止した
+		その他	すでに使用中
+
+	Timer-D による割り込みを設定する. 割り込み周期は単位時間×カウンタ.
+	CONFIG.SYS で PROCESS を設定している場合は、割り込みを変更出来ない.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みを未使用と見なす条件は _OPMINTST と同じ.
+
+==============================================================================
+
+$6c	_VDISPST	VSync Set Interrupt Handler
+
+Arg		d1.hb	割り込み期間(0:垂直帰線期間 1:垂直表示期間)
+	d1.b	カウンタ(0 の時は 256 として扱う)
+	a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定/禁止した
+		その他	すでに使用中
+
+	垂直同期による割り込みを設定する.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みを未使用と見なす条件は _OPMINTST と同じ.
+
+	実際には Timer-A に割り込みを設定している. 垂直表示回数は 31kHz で秒間
+	約 55.4 回、24kHz で約 53.0 回、15kHz で約 61.3 回(実測値).
+	電源投入後か以前に大きいカウンタ値で設定していた時は、最初の割り込みが
+	発生するタイミングが遅くなる.	
+
+==============================================================================
+
+$6d	_CRTCRAS	Raster Line Set Interrupt Handler
+
+Arg		d1.w	ラスタ番号
+	a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定した
+		その他	すでに使用中
+
+	ラスタ走査による割り込みを設定する.
+	CRTC が指定のラスタを走査開始すると割り込みが発生する.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みを未使用と見なす条件は _OPMINTST と同じ.
+
+==============================================================================
+
+$6e	_HSYNCST	HSync Set Interrupt Handler
+
+Arg		a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定した
+		その他	すでに使用中
+
+	水平同期による割り込みを設定する.
+	水平同期信号の立ち下がり時に割り込みが発生する.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みを未使用と見なす条件は _OPMINTST と同じ.
+
+==============================================================================
+
+$6f	_PRNINTST	Printer Set Interrupt Handler
+
+Arg		a1.l	処理アドレス(0 で割り込み禁止)
+
+Ret		d0.l =	0	割り込みを設定した
+		その他	すでに使用中
+
+	プリンタによる割り込みを設定する.
+	プリンタがデータを受け取ることが可能になった時に割り込みが発生する.
+	ROM IOCS version 1.3 では、ショートカットで呼び出すと割り込みが全て禁
+	止された状態で帰るので注意すること.
+	割り込みを未使用と見なす条件は _OPMINTST と同じ.
+
+==============================================================================
+
+$70	_MS_INIT	Initialize Mouse
+
+	マウスを初期化する.
+
+==============================================================================
+
+$71	_MS_CURON	Display Mouse Cursor
+
+	マウスカーソルを表示する.
+
+==============================================================================
+
+$72	_MS_CUROF	Hide Mouse Cursor
+
+	マウスカーソルを消去する.
+
+==============================================================================
+
+$73	_MS_STAT	Get Mouse Cursor Status
+
+Ret		d0.w =	0	マウスカーソルは表示されていない
+		-1		〃	表示されている
+
+	Get Mouse Cursor Status.
+
+==============================================================================
+
+$74	_MS_GETDT	Get Mouse Movement & Button Status
+
+Ret		マウスの移動量及びボタンの状態
+		bit 31～24	X 方向移動量
+		bit 23～16	Y 〃
+		bit 15～ 8	左ボタン(0:OFF -1:ON)
+		bit  7～ 0	右〃	(〃	    )
+
+	マウスの移動量及びボタンの状態を調べる.
+
+==============================================================================
+
+$75	_MS_CURGT	Get Mouse Cursor Coordinates
+
+Ret		マウスカーソルの座標
+	d0.hw	X Coordinate
+	d0.w	Y 〃
+
+	マウスカーソルの座標を調べる.
+
+==============================================================================
+
+$76	_MS_CURST	Set Mouse Cursor Coordinates
+
+Arg		マウスカーソルの座標
+	d1.hw	X Coordinate
+	d1.w	Y 〃
+
+Ret		d0.l =	0	座標が指定出来た
+		-1	座標が異常
+
+	マウスカーソルの座標を設定する.
+
+==============================================================================
+
+$77	_MS_LIMIT	Set Mouse Cursor Movement Limits
+
+Arg		マウスカーソルの座標
+	d1.hw	Leftmost X Coordinate
+	d1.w	Upper Y Coordinate
+	d2.hw	右端 X Coordinate
+	d2.w	Lower Y Coordinate
+
+Ret		d0.l =	0	座標が指定出来た
+		-1	座標が異常
+
+	マウスカーソルの移動範囲を設定する.
+
+==============================================================================
+
+$78	_MS_OFFTM	Get Mouse Cursor Release Time
+
+Arg		d1.w	ボタンの指定(0:左ボタン -1:右ボタン)
+	d2.w	待ち時間(0 の時は離すまで待つ)
+
+Ret		d0.w =	0	ドラッグ
+		-1	待ち時間の最大値を超えた
+		その他	待ち時間
+
+	Get Mouse Cursor Release Time.
+
+==============================================================================
+
+$79	_MS_ONTM	Get Mouse Cursor Press Time
+
+Arg		d1.w	ボタンの指定(0:左ボタン -1:右ボタン)
+	d2.w	待ち時間(0 の時は押すまで待つ)
+
+Ret		d0.w =	0	ドラッグ
+		-1	待ち時間の最大値を超えた
+		その他	待ち時間
+
+	Get Mouse Cursor Press Time.
+
+==============================================================================
+
+$7a	_MS_PATST	Set Mouse Cursor Pattern
+
+Arg		d1.w	カーソル番号(0～15)
+	a1.l	Pattern Dataのアドレス
+
+	マウスカーソルのパターンを定義する.
+	ROM IOCS version 1.1 では正Always動作しないので注意すること.
+	マウスカーソルの大きさは 16 x 16 ドットで、1 ドットが 1 ビットに対応する.
+	Pattern Dataの内容は以下の通り(カラーコード 8～15 は 4～7 より優先される).
+
+offset	size
+0	1.w	パターンのLeftmost X Coordinateからマウス X Coordinateまでの距離
+2	1.w	〃	  上端 Y	〃	Y	〃
+4	16.w	マスクパターン(陰にするデータ)
+36	16.w	マウスパターン(表示するデータ)
+
+	パターンの左端/上端からマウス座標までの距離は、0(パターンの左隅/上隅を
+	マウス座標にする)～15(パターンの右隅/下隅をマウス座標にする)で指定する.
+	マスクパターンが 0 のドットはカラーコード 4～7 で表示され、1 のドット
+	は無視される.
+	マウスパターンが 1 のドットはカラーコード 8～15 で表示され、0 のドット
+	は無視される. ただし、マスクパターンが 0 でマウスパターンが 1 の場合は
+	カラーコード 8～15 が優先して表示される.
+
+==============================================================================
+
+$7b	_MS_SEL		Select Mouse Cursor Pattern
+
+Arg		d1.w	カーソル番号(0～15)
+
+	マウスカーソルのパターンを選択する.
+
+==============================================================================
+
+$7c	_MS_SEL2	Mouse Cursor Animation
+
+Arg		a1.l	カーソル番号テーブルのアドレス
+
+	マウスパターンを複数個用いて、アニメーションで表示する.
+	カーソル番号テーブルはカーソル番号をワードサイズで 6 個以下並べ、最後は
+	-1 にする.
+
+==============================================================================
+
+$7d	_SKEY_MOD	Soft Keyboard Control
+
+Arg		d1.l	制御コード
+		d1.l =	0	ソフトキーボード消去
+			1		〃	表示
+			2		〃	表示状態の検査
+			-1		〃	自動制御
+	d2.l	表示座標(d1.l = 1 の時)
+		d2.hw	X Coordinate
+		d2.w	Y 〃
+
+Ret		表示状態(0:消去 1:表示)
+
+	ソフトキーボードを制御する.
+	自動制御を指定すると、マウスの右ボタンを押すことにより状態が
+	非表示→マウス表示→キーボード/マウス表示→マウス表示→非表示
+	と変化する.
+
+==============================================================================
+
+$7e	_DENSNS		Calculator Control
+
+	電卓による入力を調べる. 結果はキー入力として返る.
+
+==============================================================================
+
+$7f	_ONTIME		Get Elapsed Time Since Startup
+
+Ret		d0.l	経過時間の時分秒(0～23:59:59"99=8639999,1/100秒単位)
+	d1.l	〃	  日数  (0～65535)
+
+	ROM が起動してからの時間を調べる.
+	ROM IOCS では、ショートカットで呼び出すと割り込み禁止状態になったまま
+	で帰るので注意すること.
+
+==============================================================================
+
+$80	_B_INTVCS	Vector Settings
+
+Arg		d1.w	ベクタ番号($0000～$00ff:割り込み $0100～$01ff:IOCS コール)
+	a1.l	処理アドレス
+
+Ret		変更前の処理アドレス
+
+	ベクタの処理アドレスを設定する.
+	設定したアドレスはスーパーバイザモードで呼び出される.
+	割り込みからは rte で、IOCS コールは rts で戻る.
+	ROM IOCS version 1.3 のみ、ベクタ番号が異常な場合に -1 を返す.
+
+==============================================================================
+
+$81	_B_SUPER	Switch Between Supervisor and User Modes
+
+Arg		a1.l	ssp(0 の時ユーザモードからスーパーバイザモードに切り換え)
+
+Ret		d0.l	ユーザモードに切り換えた場合はAlways 0 を返す.
+		スーパバイザモードに切り換えた場合は、切り換え前の ssp の値を
+		返す. ただし、既にスーパバイザモードになっていたら -1 を返す.
+	a1.l	不定
+
+	スーパーバイザ/ユーザモードを切り換える.
+	スーパバイザモードに切り換えた場合、usp が ssp に設定される.
+	ユーザモードに切り換えた場合、ssp は指定したアドレスになり、usp は以前
+	のアドレスに戻る.
+
+==============================================================================
+
+$82	_B_BPEEK	Read 1 Byte from Specified Address
+
+Arg		a1.l	読み込みアドレス
+
+Ret		d0.b	データ
+	a1.l	次のアドレス
+
+	指定アドレスから 1 バイトデータを読み込む.
+
+==============================================================================
+
+$83	_B_WPEEK	Read 1 Word from Specified Address
+
+Arg		a1.l	読み込みアドレス
+
+Ret		d0.w	データ
+	a1.l	次のアドレス
+
+	指定アドレスから 1 ワードデータを読み込む.
+
+==============================================================================
+
+$84	_B_LPEEK	Read 1 Longword from Specified Address
+
+Arg		a1.l	読み込みアドレス
+
+Ret		d0.l	データ
+	a1.l	次のアドレス
+
+	指定アドレスから 1 ロングワードデータを読み込む.
+
+==============================================================================
+
+$85	_B_MEMSTR	Read Multiple Bytes from Specified Address
+
+Arg		d1.l	転送バイト数-1
+	a1.l	転送元アドレス
+	a2.l	転送先アドレス
+
+Ret		a1.l	次のアドレス
+	a2.l	〃
+	d1.l is clobbered.
+
+	指定アドレスから複数バイトデータを転送する.
+	IOCS _B_MEMSET とは転送の方向が違う(*a2++ = *a1++).
+
+==============================================================================
+
+$86	_B_BPOKE	Write Byte to Specified Address
+
+Arg		d1.b	データ
+	a1.l	書き込みアドレス
+
+Ret		a1.l	次のアドレス
+
+	指定アドレスに 1 バイトデータを書き込む.
+
+==============================================================================
+
+$87	_B_WPOKE	Write Word to Specified Address
+
+Arg		d1.w	データ
+	a1.l	書き込みアドレス
+
+Ret		a1.l	次のアドレス
+
+	指定アドレスに 1 ワードデータを書き込む.
+
+==============================================================================
+
+$88	_B_LPOKE	Write Longword to Specified Address
+
+Arg		d1.l	データ
+	a1.l	書き込みアドレス
+
+Ret		a1.l	次のアドレス
+
+	指定アドレスに 1 ロングワードデータを書き込む.
+
+==============================================================================
+
+$89	_B_MEMSET	Write Multiple Bytes to Specified Address
+
+Arg		d1.l	転送バイト数-1
+	a1.l	転送先アドレス
+	a2.l	転送元アドレス
+
+Ret		a1.l	次のアドレス
+	a2.l	〃
+	d1.l is clobbered.
+
+	指定アドレスに複数バイトデータを転送する.
+	IOCS _B_MEMSTR とは転送の方向が違う(*a1++ = *a2++).
+
+==============================================================================
+
+$8a	_DMAMOVE	DMA Copy
+
+Arg		d1.b	モード
+		bit    7	方向(0:a1からa2 1:a2からa1)
+		bit 3～2	MAC(0:a1固定 1:a1++ 2:a1-- 3:指定禁止)
+		bit 1～0	DAC(0:a2固定 1:a2++ 2:a2-- 3:指定禁止)
+	d2.l	転送バイト数
+	a1.l	転送元アドレス
+	a2.l	転送先〃
+
+Ret		d0/d2/a1/a2 may not be preserved.
+
+	バイト単位で DMA Copyを行なう.
+	$ff00 バイト以上転送する場合はすぐに戻ってこない.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+
+==============================================================================
+
+$8b	_DMAMOV_A	DMA Copy (Linear Array)
+
+Arg		d1.b	モード
+	d2.l	チェーンテーブルの個数
+	a1.l		〃	  アドレス
+	a2.l	転送先アドレス
+
+	アレイチェーンによってバイト単位で DMA Copyを行なう.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	アレイチェーンテーブルの内容は、以下のチェーンテーブルを繰り返したもの.
+
+offset	size
+0	1.l	転送元データのアドレス
+4	1.w	転送バイト数(1～$ffff)
+
+==============================================================================
+
+$8c	_DMAMOV_L	DMA Copy (Linked List)
+
+Arg		d1.b	モード
+	a1.l	チェーンテーブルのアドレス
+	a2.l	転送先アドレス
+
+	リンクアレイチェーンによってバイト単位で DMA Copyを行なう.
+	DMA が使用不可能であれば、使用可能になるまで待つ.
+	リンクアレイチェーンテーブルの内容は、以下のチェーンテーブルを連結したもの.
+
+offset	size
+0	1.l	転送元データのアドレス
+4	1.w	転送バイト数(1～$ffff)
+6	1.l	次のテーブルのアドレス(0 でテーブルの終わり)
+
+==============================================================================
+
+$8d	_DMAMODE	DMA Get Status
+
+Ret		実行状態
+	d0.l =	$00	何も実行していない
+		$8a	IOCS DMAMOVE ($8a) を実行中
+		$8b	IOCS DMAMOV_A($8b) 〃
+		$8c	IOCS DMAMOV_L($8c) 〃
+
+	DMA の実行状態を調べる.
+
+==============================================================================
+
+$8e	_BOOTINF	Get Startup Info
+
+Ret		起動状態
+	bit 31～24	起動方法(0:パワースイッチ 1:外部スイッチ 2:タイマ)
+	bit 23～ 0	ブート情報($80～$8f:SASI-HD 0～15   $90～$93:2HD-FD 0～3)
+				  ($ed0000～$ed3ffe:SRAM    その他:ROM		)
+
+	起動情報を調べる. ROM から起動した場合は起動アドレス(1.l)へのポインタ
+	を返すが、SRAM から起動した場合は起動したアドレスそのものを返す.
+	なお、SRAM/ROM から起動後、SRAM に設定されている起動アドレスを変更する
+	と正しいアドレスを返さない.
+
+==============================================================================
+
+$8f	_ROMVER		Get ROM Version
+
+Ret		バージョン/作成日(BCD)
+		bit 31～24	バージョン
+		bit 23～16	年
+		bit 15～ 8	月
+		bit  7～ 0	日
+
+	ROM のバージョンと作成年月日を調べる.
+
+==============================================================================
+
+$90	_G_CLR_ON	Initialize Graphics Plane and Set Display Mode
+
+	Graphic Planeをクリアして表示する. パレットは標準に戻り、アクセスペ
+	ージは 0 に設定される.
+
+==============================================================================
+
+$91	(unused)	Set Graphics Plane Mode
+
+Arg		d1.b	Graphic Planeモード
+		d1.b =	0	   16 色 4 画面(実画面 512)
+			1	  256 〃 2  〃 (  〃   512)
+			3	65536 〃 1  〃 (  〃   512)
+			4	   16 〃 1  〃 (  〃  1024)
+			-1	現在のモードを調べる
+
+Ret		変更前のGraphic Planeモード
+
+	Graphic Planeモードを直接設定する.
+	設定データは VC R0($e82400) の設定と同じ.
+
+==============================================================================
+
+$92	(unused)	Set Plane Priority
+
+Arg		d1.w	Set Plane Priority(ただし d1.w = -1 の時は現在の設定を調べます)
+
+Ret		変更前の設定
+
+	プライオリティを直接設定する.
+	設定データは VC R1($e82500) の設定と同じ.
+
+==============================================================================
+
+$93	(unused)	Screen Display and Special Mode Settings
+
+Arg		d1.w	画面表示及び特殊モード設定(ただし d1.w = -1 の時は現在の設定を調べます)
+
+Ret		変更前の設定
+
+	画面表示及び特殊モードを直接設定する.
+	設定データは VC R2($e82600) の設定と同じ.
+
+==============================================================================
+
+$94	GPALET		Graphics Plane Palette Setting
+
+Arg		d1.w	パレットコード
+	d2.l	カラーコード(d2.l = -1 の時カラーコードを調べます)
+
+Ret		d0.l =	0	Normal return
+		-1	Graphic Planeが初期化されていないか、パレットコードが異常
+	d2.l = -1 の時はカラーコードを返す(-1 ならエラー)
+
+	グラフィックパレットを設定/収得する.
+	ROM IOCS では65536色モードで正Always動作しないので注意すること.
+
+==============================================================================
+
+$95	(unused)	Color Code Setting
+
+Arg		d1.w	パレットコード
+
+	IOCS $9a,$9b,$9c で書き込まれるパレットコードを設定する.
+
+==============================================================================
+
+$96	(unused)	Access Page Setting
+
+Arg		d1.w	アクセスページ(0～3)
+
+	グラフィック IOCS で操作されるページを直接設定する.
+	IOCS APAGE($b1) とほぼ同じであるが、存在しないページを指定してもエラー
+	にならないので注意すること.
+
+==============================================================================
+
+$97	(unused)	Write Dot to Graphics VRAM (With Color Mask)
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	(色数 $000f:16色 $00ff:256色 $ffff:65536色)
+		(6,a1)	(Pattern Data)
+
+	Graphic Planeからバッファにドット単位で読み込む.
+
+==============================================================================
+
+$98	(unused)	Write Dot to Graphics VRAM
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	d3.w	マスクするカラーコード
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	色数($000f:16色 $00ff:256色 $ffff:65536色)
+		(6,a1)	Pattern Data
+
+Ret		d0.l =	0	Normal return
+		-1	エラー(指定された色数と実際の設定が異なる)
+
+	バッファからGraphic Planeにドット単位で書き込む.
+	マスクするカラーコードに指定した色のドットは書き込まれない.
+
+==============================================================================
+
+$99	(unused)	Write Bit Pattern to Graphics VRAM
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	色数($000f:16色 $00ff:256色 $ffff:65536色)
+		(6,a1)	Pattern Data
+
+Ret		d0.l =	0	Normal return
+		-1	エラー(指定された色数と実際の設定が異なる)
+
+	バッファからGraphic Planeにドット単位で書き込む.
+
+==============================================================================
+
+$9a	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	ビットパターン
+
+	Graphic Planeにビットパターンを書き込む.
+	ビットが 1 のドットは IOCS $95 で設定したカラーコードが書き込まれ、
+	0 のドットは何も書き込まれない.
+
+==============================================================================
+
+$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)(バックカラーあり)
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	d3.w	バックカラーコード
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	ビットパターン
+
+	Graphic Planeにビットパターンを書き込む.
+	ビットが 1 のドットは IOCS $95 で設定したカラーコードが書き込まれ、
+	0 のドットはバックカラーコードが書き込まれる.
+
+==============================================================================
+
+$9c	(unused)	Write Extended Bit Pattern to Graphics VRAM
+
+Arg		d1.w	X Coordinate
+	d2.w	Y 〃
+	d3.w	X 方向の拡大率
+	d4.w	Y 〃
+	a1.l	バッファのアドレス
+		(0,a1)	X 方向のドット数
+		(2,a1)	Y 〃
+		(4,a1)	ビットパターン
+
+	Graphic Planeにビットパターンを拡大して書き込む.
+	ビットが 1 のドットは IOCS $95 で設定したカラーコードが書き込まれ、
+	0 のドットは何も書き込まれない.
+
+==============================================================================
+
+$a0	_SFTJIS		S-JIS to JIS Code Conversion
+
+Arg		d1.w	S-JIS Kanji Code
+
+Ret		d0.hw =	0	変換成功
+		-1	エラー
+	d0.w	JIS Kanji Code(エラーの場合通常 $2228:※)
+	d1.l	〃
+
+	S-JIS Kanji Codeを JIS Kanji Codeに変換する.
+
+==============================================================================
+
+$a1	_JISSFT		JIS to S-JIS Code Conversion
+
+Arg		d1.w	JIS Kanji Code
+
+Ret		d0.hw =	0	変換成功
+		-1	エラー
+	d0.w	S-JIS Kanji Code(エラーの場合通常 $81a6:※)
+	d1.l	〃
+
+	JIS Kanji Codeを S-JIS Kanji Codeに変換する.
+
+==============================================================================
+
+$a2	_AKCONV		ANK to S-JIS Code Conversion
+
+Arg		d1.hw	平仮名/片仮名の指定(0:平仮名に変換 1:片仮名に変換)
+	d1.w	ANK コード($20～7e,$a1～df)
+
+Ret		d0.hw =	0	変換成功
+		-1	エラー
+	d0.w	S-JIS Kanji Code(エラーの場合通常 $81a6:※)
+
+	ANK コードを 全角 S-JIS コードに変換する.
+
+==============================================================================
+
+$a3	_RMACNV		Romaji to ANK Code Conversion
+
+Arg		d1.b	アルファベット
+	a1.l	作業領域のアドレス
+	a2.l	変換結果を入れるバッファのアドレス
+
+Ret		ステータス
+	d0.l =	0	変換途中で返せる仮名文字がない
+			(作業領域に変換途中の文字が残っているので、それを破棄
+			してはいけない)
+		-1	変換不可能な文字が指定された
+			(作業領域の先頭バイトは 0 になる)
+		その他	変換文字数(作業領域に変換途中の文字が残っている可能性
+			があるので、それを破棄してはいけない)
+
+	ローマ字を仮名に変換する. ローマ字は通常大文字を使用し、促音や拗音など
+	小さい仮名はローマ字の母音にアルファベットの小文字を用いる.
+	最初の変換の前に、作業領域の先頭のバイトを 0 にしておく.
+
+==============================================================================
+
+$a4	_DAKJOB		Dakuten
+
+Arg		a1.l	全角文字列の終端(0)のアドレス
+
+Ret		d0.l	文字列の増加したバイト数
+		d0.l =	0	最後の全角文字に濁点を付けた場合
+			2	文字列の最後に濁点を加えた場合
+	a1.l	処理後の全角文字列の終端のアドレス
+
+	全角文字列のDakutenを行なう.
+
+==============================================================================
+
+$a5	_HANJOB		Handakuten
+
+Arg		a1.l	全角文字列の終端(0)のアドレス
+
+Ret		d0.l	文字列の増加したバイト数
+		d0.l =	0	最後の全角文字に半濁点を付けた場合
+			2	文字列の最後に半濁点を加えた場合
+	a1.l	処理後の全角文字列の終端のアドレス
+
+	全角文字列のHandakutenを行なう.
+
+==============================================================================
+
+$ac	_SYS_STAT	Set System Status
+
+Arg		d1.l	モード
+		d1.l =	0	MPU 状態の収得
+			1	キャッシュ状態の収得
+			2	キャッシュを SRAM の設定値に設定
+			3	キャッシュの消去
+			4	キャッシュの設定
+	d2.l	キャッシュ有効/無効フラグ(d1.l = 4 の時のみ)
+		bit	1	データキャッシュ(0:無効 1:有効)
+		bit	0	命令	〃	(	〃    )
+
+Ret		d1.l = 0 の時、MPU ステータス
+		bit 31～16	クロックスピード(0.1MHz単位)
+		bit	15	浮動小数点演算コプロセッサ(0:なし 1:あり)
+		bit	14	MMU(0:なし 1:あり)
+		bit  7～ 0	MPU タイプ(0:68000 1:68010 2:68020 3:68030)
+	d1.l = 1,2,4 の時、変更前のキャッシュ有効/無効フラグ
+
+	Set System Statusを行なう.
+	この IOCS コールは ROM IOCS version 1.3 だけで使用可能.
+
+==============================================================================
+
+$ad	_B_CONMOD	Cursor and Scroll Settings
+
+Arg		d1.l	モード
+		d1.w =	0	カーソル点滅許可
+			1	カーソル点滅禁止
+			2	カーソルパターン指定
+			3	カーソルパターン定義
+			16	スムーススクロールの指定
+			17	ラスタコピースクロールの指定
+			18	ソフト〃
+	d2.l	d1.w = 2 の時、カーソルパターン
+		d2.w =	0	内部バッファに定義されたパターンで描画する.
+			その他	d2.hw をスタートラインと見なして、d2.b/d2.hb
+				をプレーン 0/1 と排他論理和をとる.
+		d1.w = 3 の時、パターンアドレス
+		d1.w = 16 の時、スクロールの指定
+		d2.l =	0	ジャンプスクロール
+			1	 4 ドットスクロール
+			2	 8 〃
+			3	16 〃
+
+	カーソルおよびスクロールを設定する.
+	カーソルの点滅を禁止した場合、カーソルが表示されたままになる. 許可状態
+	ならば一定時間ごとに反転する.
+
+	カーソルパターンの指定は、d2.b でプレーン 0 の反転パターン、d2.hb でプ
+	レーン 1 の反転パターンを設定し、d2.hw で指定したライン位置から一番下
+	Lineまで排他的論理和がとられる. $0000_ffffで従来のパターンと同じに
+	なる. d2.w が 0 の場合は d1.w = 3 で設定したパターンが使用される.
+
+	カーソルパターンの定義は、d2.l をカーソルのパターンアドレスと見なして
+	内部バッファにコピーする. パターンはプレーン 0/1 の順に 16 バイトずつ
+	並べる.
+
+	スムーススクロールを使用する場合は、文字を連続的に出力しなければスクロ
+	ール時に画面が乱れる. 垂直同期(16ms)の間に 1 ライン出力を終了すること.
+	また、広範囲でのソフトコピースクロールは、表示速度が遅くなる.
+
+	この IOCS コールは ROM IOCS version 1.3 若しくは IOCS.X 常駐時のみ使用
+	可能. ただし、前者の場合は d1.w = 2 のカーソルパターン指定で d2.l = 0
+	の場合は標準のカーソルが表示される. また d2.w = 3 のカーソルパターン定
+	義は使用できないので注意すること.
+
+==============================================================================
+
+$ae	_OS_CURON	Cursor Enable
+
+	Cursor Enableをする. コンソールに対して ESC[>5l を出力した時に使用される.
+	IOCS $20～$2f に対して有効.
+
+==============================================================================
+
+$af	_OS_CUROF	Cursor Disable
+
+	Cursor Enableしない. コンソールに対して ESC[>5h を出力した時に使用される.
+	IOCS $20～$2f に対して有効.
+
+==============================================================================
+
+$b0	_DRAWMODE	Graphic Plane Rendering モードの設定
+
+Arg		d1.w	描画モード(0:通常 1:反転 -1:現在のモードを調べる)
+
+Ret		変更前のモード
+
+	Graphic Plane Rendering の際の描画モードを設定する.
+	反転モードで描画した場合、書き込まれるドットの色の NOT 値で描画する.
+	このモードで 2 回描画すると、画面が元に戻る. 使用後は通常の描画モード
+	に戻すこと.
+	反転モードが有効な IOCS コールは _LINE、_BOX、_FILL、_SYMBOL だけで、
+	他のコールはAlways通常のモードで描画される.
+	この IOCS コールは ROM IOCS version 1.3 若しくは IOCS.X、HIOCS.X 常駐
+	時のみ使用可能だが、前の二つでは正Always動作しない.
+
+==============================================================================
+
+$b1	_APAGE		Graphic Plane Rendering ページの設定
+
+Arg		d1.b	書き込みページ(0～3,-1 の時は現在の設定を調べます)
+
+Ret		d1.b = -1 の時、現在の書き込みページ
+	それ以外の時、ステータス
+		d0.l =	0	Normal return
+			-1	グラフィック使用不可
+			-2	ページが指定外(4 以上)
+			-3	指定ページは現在のモードでは使用不可
+
+	Graphic Planeの書き込みページを設定する.
+
+==============================================================================
+
+$b2	_VPAGE		Graphic Plane Set Display Page
+
+Arg		d1.b	表示ページ(bit 0～3 がページ 0～3 に対応)
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	ページが指定外
+		-3	指定ページは現在のモードでは使用不可
+
+	Graphic Planeの表示ページを設定する.
+
+==============================================================================
+
+$b3	_HOME		Graphic Plane Set Display Position
+
+Arg		d1.b	表示位置を設定するページ(bit 0～3 がページ 0～3 に対応,0 で全てのページ)
+	d2.w	X Coordinate
+	d3.w	Y 〃
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	ページ若しくは座標が指定外
+		-3	指定ページ若しくは座標は現在のモードでは使用不可
+
+	Graphic Planeの表示位置を設定する.
+	d1.b = 0 の時、有効なページが全て変更される.
+
+==============================================================================
+
+$b4	_WINDOW		Graphic Plane Rendering ウィンドウの設定
+
+Arg		d1.w	Leftmost X Coordinate
+	d2.w	Upper Y Coordinate
+	d3.w	Rightmost X Coordinate
+	d4.w	Lower Y Coordinate
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	座標指定が異常
+		-3	指定座標は現在のモードでは使用不可
+
+	Graphic Planeのクリッピング範囲を設定する. IOCS $b5～$bf に対して有効.
+	d1.w ≦ d3.w かつ d2.w ≦ d4.w でなければならない.
+
+==============================================================================
+
+$b5	_WIPE		Graphic Plane Clear
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+
+	Graphic Planeをクリアする.
+
+==============================================================================
+
+$b6	_PSET		Graphic Plane Set Point
+
+Arg		a1.l	パラメータバッファのアドレス
+		(0,a1)	X Coordinate
+		(2,a1)	Y 〃
+		(4,a1)	パレットコード
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに点を描画する.
+
+==============================================================================
+
+$b7	_POINT		Graphic Plane Get Point
+
+Arg		a1.l	パラメータバッファのアドレス
+		(0,a1)	X Coordinate
+		(2,a1)	Y 〃
+		(4,a1)	(パレットコード)
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+
+	Graphic Planeの指定の点のパレットコードを調べる.
+	指定座標がクリッピング範囲外であった場合、パレットコードはAlways 0 が返る.
+
+==============================================================================
+
+$b8	_LINE		Graphic Plane Line
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	始点 X Coordinate
+		 (2,a1)	〃   Y 〃
+		 (4,a1)	終点 X 〃
+		 (6,a1)	〃   Y 〃
+		 (8,a1)	パレットコード
+		(10,a1)	ラインスタイル
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに線を描画する.
+
+==============================================================================
+
+$b9	_BOX		Graphic Plane Box
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	始点 X Coordinate
+		 (2,a1)	〃   Y 〃
+		 (4,a1)	終点 X 〃
+		 (6,a1)	〃   Y 〃
+		 (8,a1)	パレットコード
+		(10,a1)	ラインスタイル
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに長方形を描画する.
+
+==============================================================================
+
+$ba	_FILL		Graphic Plane Box Fill
+
+Arg		a1.l	パラメータバッファのアドレス
+		(0,a1)	始点 X Coordinate
+		(2,a1)	〃   Y 〃
+		(4,a1)	終点 X 〃
+		(6,a1)	〃   Y 〃
+		(8,a1)	パレットコード
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに塗り潰した長方形を描画する.
+
+==============================================================================
+
+$bb	_CIRCLE		Graphic Plane Circle
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	中心 X Coordinate
+		 (2,a1)	〃   Y 〃
+		 (4,a1)	半径
+		 (6,a1)	パレットコード
+		 (8,a1)	円弧開始角度(負数で扇形を描画)
+		(10,a1)	〃  終了〃  (	    〃	     )
+		(12,a1)	比率
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに楕円を描画する.
+	円弧開始/終了角度は 0～360 で、負数を指定すると扇形(角度は値の絶対値)
+	を描画する.
+	比率(以下 P)は 0～$ff00 で、描画する楕円の形は以下の通り.
+
+	  0 ≦ P ＜   256	横長楕円 Rx = R ; Ry = R*P/256
+	256 ＜ P ≦ $ff00	縦長楕円 Ry = R ; Rx = R*P/$ff00(P は 256 単位で切捨て)
+	       P ＝   256	    真円 Rx = Ry = R
+
+==============================================================================
+
+$bc	_PAINT		Graphic Plane Paint
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	X Coordinate
+		 (2,a1)	Y 〃
+		 (4,a1)	パレットコード
+		 (6,a1)	作業領域開始アドレス
+		(10,a1)	〃	終了〃
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeを塗り潰す.
+	作業領域は偶数番地から始まる必要があり、不足した場合はペイント途中で戻る.
+
+==============================================================================
+
+$bd	_SYMBOL		Graphic Plane Symbol
+
+Arg		a1.l	パラメータバッファのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	指定パレットコードは現在のモードでは使用不可
+
+	Graphic Planeに文字列を拡大して描画する.
+	座標は、回転角度が 0,90,180,270 の時それぞれ左上/左下/右下/右上隅を指定する.
+	パラメータバッファの内容は以下の通り.
+
+offset	size
+ 0	1.w	X Coordinate
+ 2	1.w	Y 〃
+ 4	1.l	String address
+ 8	1.b	X 方向倍率
+ 9	1.b	Y 〃
+10	1.w	パレットコード
+12	1.b	文字パターンの大きさ(0:12 ドット系 1:16〃 2:24〃)
+13	1.b	回転角度(0:0°1:90°2:180°3:270°)
+
+==============================================================================
+
+$be	_GETGRM		Graphic Plane Read Dot-by-Dot
+
+Arg		a1.l	パラメータバッファのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	座標指定が異常
+		-3	バッファの容量が小さすぎる
+
+	Graphic Planeからバッファにドット単位で読み込む.
+	パラメータバッファの内容は以下の通り.
+
+offset	size
+ 0	1.w	始点 X Coordinate
+ 2	1.w	〃   Y 〃
+ 4	1.w	終点 X 〃
+ 6	1.w	〃   Y 〃
+ 8	1.l	バッファ開始アドレス
+12	1.l	〃	終了〃
+
+==============================================================================
+
+$bf	_PUTGRM		Graphic Plane Write Dot-by-Dot
+
+Arg		a1.l	パラメータバッファのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	グラフィック使用不可
+		-2	座標指定が異常
+		-3	バッファの容量が小さすぎる
+
+	バッファからGraphic Planeにドット単位で書き込む.
+	パラメータバッファの内容は以下の通り.
+
+offset	size
+ 0	1.w	始点 X Coordinate
+ 2	1.w	〃   Y 〃
+ 4	1.w	終点 X 〃
+ 6	1.w	〃   Y 〃
+ 8	1.l	バッファ開始アドレス
+12	1.l	〃	終了〃
+
+==============================================================================
+
+$c0	_SP_INIT	Initialize Sprites
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	スプライト画面を初期化する.
+
+==============================================================================
+
+$c1	_SP_ON		Enable Sprite Display
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	スプライト画面を表示する.
+
+==============================================================================
+
+$c2	_SP_OFF		Disable Sprite Display
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	スプライト画面を表示しない.
+
+==============================================================================
+
+$c3	_SP_CGCLR	Clear Sprite Pattern Data
+
+Arg		d1.l	パターンコード(0～255)
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	指定した PCG をクリアする. クリアするパターンの大きさは 128 バイト.
+
+==============================================================================
+
+$c4	_SP_DEFCG	Define Sprite Pattern
+
+Arg		d1.l	パターンコード(0～255)
+	d2.l	パターンの大きさ(0:8x8 1:16x16)
+	a1.l	Pattern Dataのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	指定した PCG のパターンを定義する.
+	パターンの大きさは d2.l = 0 の時 32 バイト、d2.l = 1 の時 128 バイト.
+
+==============================================================================
+
+$c5	_SP_GTPCG	Load Sprite Pattern
+
+Arg		d1.l	パターンコード(0～255)
+	d2.l	パターンの大きさ(0:8x8 1:16x16)
+	a1.l	バッファのアドレス
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	指定した PCG のパターンを読み込む.
+	バッファは d2.l = 0 の時 32 バイト、d2.l = 1 の時 128 バイト必要.
+
+==============================================================================
+
+$c6	_SP_REGST	Set Sprite Register
+
+Arg		d1.l	垂直帰線期間検出/スプライト番号
+		bit   31	0:垂直帰線期間検出後設定 1:検出しない
+		bit 6～0	スプライト番号(0～127)
+	d2.l	X Coordinate(0～1023	16 で左端に表示される)
+	d3.l	Y 〃  (〃	〃   上端〃	     )
+	d4.l	パターンコード
+		bit	15	縦方向反転指定(0:反転しない 1:する)
+		bit	14	横〃	      (		〃	  )
+		bit 11～ 8	パレットブロック指定(0～15)
+		bit  7～ 0	パターンコード(0～255)
+	d5.l	プライオリティ
+		d5.l =	0	スプライトを表示しない
+			1	BG0 < BG1 < SP
+			2	BG0 < SP  < BG1
+			3	SP  < BG0 < BG1
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	スプライトレジスタを設定する.
+	d2.l/d3.l/d4.l/d5.l を -1 にすると設定を変更しないが、始めての設定時に
+	は -1 を指定してはいけない.
+
+==============================================================================
+
+$c7	_SP_REGGT	Get Sprite Register
+
+Arg		d1.l	スプライト番号(0～127)
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+	d2.l	X Coordinate
+	d3.l	Y 〃
+	d4.l	パターンコード
+	d5.l	プライオリティ
+
+	スプライトレジスタを読み出す.
+
+==============================================================================
+
+$c8	_BGSCRLST	Set Background Scroll
+
+Arg		d1.l	垂直帰線期間検出/バックグラウンドの指定
+		bit 31	0:垂直帰線期間検出後設定 1:検出しない
+		bit  0	BG 番号(0/1)
+	d2.l	X Coordinate(0～1023)
+	d3.l	Y 〃  (〃     )
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	バックグラウンドスクロールレジスタを設定する. d2.l/d3.lを -1 にすると
+	設定を変更しないが、始めての設定時には -1 を指定してはいけない.
+
+==============================================================================
+
+$c9	_BGSCRLGT	Get Background Scroll
+
+Arg		d1.l	バックグラウンドの指定(0/1)
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+	d2.l	X Coordinate
+	d3.l	Y 〃
+
+	バックグラウンドスクロールレジスタを読み出す.
+
+==============================================================================
+
+$ca	_BGCTRLST	Set Background Control
+
+Arg		d1.l	バックグラウンドの指定(0/1)
+	d2.l	テキストページの指定(0/1)
+	d3.l	表示/非表示指定(0:非表示 1:表示)
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	バックグラウンドコントロールレジスタを設定する. d2.l/d3.lを -1 にする
+	と設定を変更しないが、始めての設定時には -1 を指定してはいけない.
+
+==============================================================================
+
+$cb	_BGCTRLGT	Get Background Control
+
+Arg		d1.l	バックグラウンドの指定(0/1)
+
+Ret		d0.l =	0	テキストページ 0、非表示
+		1	〃	       0、  表示
+		2	〃	       1、非表示
+		3	〃	       1、  表示
+		-1	画面モードが不正
+
+	バックグラウンドコントロールレジスタを読み出す.
+
+==============================================================================
+
+$cc	_BGTEXTCL	Background Text Clear
+
+Arg		d1.l	テキストページの指定(0/1)
+	d2.l	パターンコード
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	バックグラウンド画面の指定したテキストページをパターンコードで埋める.
+
+==============================================================================
+
+$cd	_BGTEXTST	Background Text Set
+
+Arg		d1.l	テキストページの指定(0/1)
+	d2.l	X Coordinate(0～63)
+	d3.l	Y 〃  (  〃 )
+	d4.l	パターンコード
+
+Ret		d0.l =	0	Normal return
+		-1	画面モードが不正
+
+	バックグラウンド画面のテキストページにパターンコードを設定する.
+
+==============================================================================
+
+$ce	_BGTEXTGT	Background Text Get
+
+Arg		d1.l	テキストページの指定(0/1)
+	d2.l	X Coordinate(0～63)
+	d3.l	Y 〃  (  〃 )
+
+Ret		d0.l =	-1	画面モードが不正
+		その他	パターンコード
+
+	バックグラウンド画面のテキストページからパターンコードを読み出す.
+
+==============================================================================
+
+$cf	_SPALET		Set Sprite Palette
+
+Arg		d1.l	垂直帰線期間検出/パレットコード
+		bit    31	0:垂直帰線期間検出後設定 1:検出しない
+		bit 3～ 0	パレットコード(0～15 若しくは 16～255)
+	d2.l	パレットブロック(1～15 若しくは 0)
+	d3.l	カラーコード(d3.l = -1 の時カラーコードを調べる)
+
+Ret		d0.l =	-1	画面モードが不正
+		-2	パレットブロック 0 を設定/収得しようとした
+		その他	変更前の設定
+
+	スプライトパレットを設定する.
+	パレットブロックに 0 を指定した場合は、パレットコードをパレット先頭か
+	らの通し番号で指定する事が出来る. ただし、パレットブロック 0 は指定で
+	きないので、パレットコードは 16 以上に限る.
+	垂直帰線期間を検出せずにパレットを設定すると、画面がちらつく.
+
+==============================================================================
+
+$d3	_TXXLINE	Text Plane Horizontal Line
+
+Arg		a1.l	パラメータバッファのアドレス
+		(0,a1)	テキストプレーン(0～3)
+		(2,a1)	X Coordinate
+		(4,a1)	Y 〃
+		(6,a1)	X 方向の長さ
+		(8,a1)	ラインスタイル(下位バイトのみ有効)
+
+	テキスト画面に垂直線を描画する.
+	ROM IOCS version 1.3 若しくは IOCS.X 常駐時は、テキストプレーンの指定
+	において最上位ビットを 1 にすることにより、複数プレーンに同時に描画す
+	る事が出来る. bit 0～3 がプレーン0～3に対応する. また、呼び出された時
+	にテキスト同時アクセス機能が有効になっていれば、テキストプレーンの指定
+	は無視され、設定されていたプレーンに描画される.
+
+==============================================================================
+
+$d4	_TXYLINE	Text Plane Vertical Line
+
+Arg		a1.l	パラメータバッファのアドレス
+		(0,a1)	テキストプレーン(0～3)
+		(2,a1)	X Coordinate
+		(4,a1)	Y 〃
+		(6,a1)	Y 方向の長さ
+		(8,a1)	ラインスタイル(下位バイトのみ有効)
+
+	テキスト画面に水平線を描画する.
+	テキストプレーンの指定は _TXXLINE と同じ.
+
+==============================================================================
+
+$d5	_TXLINE		Text Plane Line
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	テキストプレーン(0～3)
+		 (2,a1)	始点 X Coordinate
+		 (4,a1)	〃   Y 〃
+		 (6,a1)	X 方向の長さ
+		 (8,a1)	Y 〃
+		(10,a1)	ラインスタイル(下位バイトのみ有効)
+
+	テキスト画面に線を描画する.
+	テキストプレーンの指定は _TXXLINE と同じ.
+	CRTC のビットマスク機能を使用しているので、マウスカーソルはオフにして
+	このコールを呼び出ること.
+	この IOCS コールは ROM IOCS version 1.3 若しくは IOCS.X 常駐時のみ使用
+	可能.
+
+==============================================================================
+
+$d6	_TXBOX		Text Plane Box
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	テキストプレーン(0～3)
+		 (2,a1)	X Coordinate
+		 (4,a1)	Y 〃
+		 (6,a1)	X 方向の長さ
+		 (8,a1)	Y 〃
+		(10,a1)	ラインスタイル(下位バイトのみ有効)
+
+	テキスト画面に長方形を描画する.
+	テキストプレーンの指定は _TXXLINE と同じ.
+
+==============================================================================
+
+$d7	_TXFILL		Text Plane Box Fill
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	テキストプレーン(0～3)
+		 (2,a1)	X Coordinate
+		 (4,a1)	Y 〃
+		 (6,a1)	X 方向の長さ
+		 (8,a1)	Y 〃
+		(10,a1)	ラインスタイル
+
+	テキスト画面に塗り潰した長方形を描画する.
+	テキストプレーンの指定は _TXXLINE と同じ.
+	ラインスタイルは、上位・下位バイトでそれぞれ偶数ライン目・奇数ライン目
+	の水平方向Lineスタイルを指定する.
+
+==============================================================================
+
+$d8	_TXREV		Text Plane Invert
+
+Arg		a1.l	パラメータバッファのアドレス
+		 (0,a1)	テキストプレーン(0～3)
+		 (2,a1)	X Coordinate
+		 (4,a1)	Y 〃
+		 (6,a1)	X 方向の長さ
+		 (8,a1)	Y 〃
+
+	テキスト画面の指定範囲を反転する.
+	ROM IOCS version 1.3 若しくは IOCS.X 常駐時、呼び出された時にテキスト
+	同時アクセス機能が有効になっていれば、テキストプレーンの指定は無視され、
+	設定されていたプレーンに描画される.
+
+==============================================================================
+
+$df	_TXRASCPY	Text Plane Raster Copy
+
+Arg		d1.hb	コピー元ラスタ番号
+	d1.b	コピー先〃
+	d2.w	コピーラスタ数
+	d3.hb	ポインタ移動方向(0:下方向 -1:上方向)
+	d3.b	テキストプレーン(bit 0～3 がプレーン 0～3 に対応する)
+
+	テキスト画面の指定範囲をラスタコピーする.
+
+==============================================================================
+
+$f0	_OPMDRV		OPMDRV Control
+
+Arg		d1.l	機能番号
+
+	音源ドライバ OPMDRV.X で追加されたファンクションコールを呼び出す.
+	引数/返値は機能番号によって異なる.
+
+==============================================================================
+
+$f1	_RSDRV		RS-232C Extended Control
+
+Arg		d2.hb	AUX 番号(0～5)
+	d2.b	機能番号($30～$39)
+		d2.b =	$30～$35	指定したポートで直接 IOCS $30～$35 の
+					機能を実行する.
+			$36,$37		d1.l = バッファサイズ
+					a1.l = バッファアドレス
+					指定ポートの受信バッファを設定する.
+			$38,$39		未解析.
+
+返値
+	d2.b = $36,$37 の時
+		d1.w = 変更前のバッファサイズ
+		a1.l = 変更前のバッファアドレス
+
+	RSDRV.SYS で追加されたファンクションコールを呼び出す.
+	詳細不明.
+
+==============================================================================
+
+$f2	_A_JOYGET	Analog Joystick Control
+
+Arg		d1.l	機能番号
+	d2.w	モード(d1.l = 1 の時)
+		d2.w =	0	デジタル
+			1	アナログ
+			-1	現在の設定を調べる
+	d2.w	通信速度(d1.l = 2 の時)
+		d2.w =	0	最高速度
+			1	最高速度の1/2
+			2	〃	  1/3
+			3	〃	  1/4
+			-1	現在の速度を調べる
+	a1.l	バッファアドレス(d1.l = 0 の時のみ)
+
+Ret		d1.l =	0 の時、ステータス(-1 でエラー)
+		1 の時、変更前のモード
+		2 の時、変更前の速度
+
+	アナログジョイスティックドライバ AJOY.X で追加されたファンクション
+	コールを呼び出す.
+
+	d1.l = 0 の時、a1.l で指定したバッファにアナログジョイスティックのデー
+	タを読み込む. ジョイスティックデータの内容は以下の通り.
+
+offset	size
+0	1.w	スティック上下(0:上～255:下)
+2	1.w	〃	  左右(0:左～255:右)
+4	1.w	スロットル
+6	1.w	オプション
+8	1.w	トリガ(押し下げ状態でビットが0になる)
+		bit 11	A
+		bit 10	B
+		bit  9	A'
+		bit  8	B'
+		bit  7	A or A'(どちらかを押していれば0)
+		bit  6	B or B'(	〃	       )
+		bit  5	C
+		bit  4	D
+		bit  3	E1
+		bit  2	E2
+		bit  1	スタート
+		bit  0	セレクト
+
+	d1.l = 1 の時、ジョイスティックのモードを変更する.
+
+	d1.l = 2 の時、ジョイスティックの通信速度を変更する. 最高速度に設定し
+	た場合、ジョイスティックをリセットしない限り他の速度に変更出来なくなる.
+
+==============================================================================
+
+$f3	_MUSICDRV	MUSICDRV Control
+
+Arg		d1.l	機能番号
+
+	音源ドライバ MUSICDRV.X で追加されたファンクションコールを呼び出す.
+	引数/返値は機能番号によって異なる.
+
+==============================================================================
+
+$f5	_SCSIDRV	SCSI IOCS
+
+Arg		d1.l	機能番号
+
+	SCSI IOCS で追加されたファンクションコールを呼び出す.
+	引数/返値は機能番号によって異なる.
+
+==============================================================================
+
+$fd	_ABORTRST	Reset Environment to Initial Settings
+
+	Abortするための環境を再設定する. OS で使用する.
+
+==============================================================================
+
+$fe	_IPLERR		Reboot
+
+	起動時のエラーでReboot時に使用する. 通常は使用しない.
+
+==============================================================================
+
+$ff	_ABORTJOB	Abort
+
+	Abortする. OS で使用する.
+
+==============================================================================
+
