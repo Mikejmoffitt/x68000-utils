@@ -159,7 +159,7 @@ $97	(unused)	Write Dot to Graphics VRAM (With Color Mask)
 $98	(unused)	Write Dot to Graphics VRAM
 $99	(unused)	Write Bit Pattern to Graphics VRAM
 $9a	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)
-$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)(バックカラーあり)
+$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)
 $9c	(unused)	Write Extended Bit Pattern to Graphics VRAM
 $a0	_SFTJIS		S-JIS to JIS Code Conversion
 $a1	_JISSFT		JIS to S-JIS Code Conversion
@@ -680,7 +680,7 @@ Ret		d1.w is clobbered.
 $16	_FNTADR		Get Font Address
 
 Arg		d1.w	Kanji code (Shift-JIS/JIS)
-	d2.b	Pattern Size
+		d2.b	Pattern Size
 		d2.b =	6	 6x12,12x12 dots
 			8	 8x16,16x16 "
 			12	12x24,24x24 "
@@ -1169,7 +1169,7 @@ Ret		変更前のアドレス(ROM IOCS version 1.3 のみ)
 
 ==============================================================================
 
-$38	_SETFNTADR	Set Gaiji (External Charater) Font Address
+$38	_SETFNTADR	Set Gaiji (External Character) Font Address
 
 Arg		d1.l	フォントアドレス(負数でアドレス収得のみ)
 	d2.l	外字グループ番号
@@ -1626,7 +1626,7 @@ offset	size
 $4e	_B_DRVCHK	2HD (Floppy) Check Drive Status
 
 Arg		d1.hb	PDA(SASI-HD:$80～$8f は指定出来ません)
-	d2.w	機能番号
+	d2.w	Function number
 		d2.w =	0	状態検査
 			1	排出(排出禁止状態では排出不可)
 			2	排出禁止 1
@@ -2728,7 +2728,7 @@ Arg		d1.w	X Coordinate
 
 ==============================================================================
 
-$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)(バックカラーあり)
+$9b	(unused)	Write Bit Pattern to Graphics VRAM (With Back Color)
 
 Arg		d1.w	X Coordinate
 	d2.w	Y 〃
@@ -3549,17 +3549,20 @@ Arg		d1.hb	コピー元ラスタ番号
 
 $f0	_OPMDRV		OPMDRV Control
 
-Arg		d1.l	機能番号
+	
+Arg		d1.l	Function number
 
-	音源ドライバ OPMDRV.X で追加されたファンクションコールを呼び出す.
-	引数/返値は機能番号によって異なる.
+	Call a function provided by the sound source driver OPMDRV.X.
+	
+
+	The arguments and return values depend on the function number.
 
 ==============================================================================
 
 $f1	_RSDRV		RS-232C Extended Control
 
 Arg		d2.hb	AUX 番号(0～5)
-	d2.b	機能番号($30～$39)
+		d2.b	Function number($30～$39)
 		d2.b =	$30～$35	指定したポートで直接 IOCS $30～$35 の
 					機能を実行する.
 			$36,$37		d1.l = バッファサイズ
@@ -3579,7 +3582,7 @@ Arg		d2.hb	AUX 番号(0～5)
 
 $f2	_A_JOYGET	Analog Joystick Control
 
-Arg		d1.l	機能番号
+Arg		d1.l	Function number
 	d2.w	モード(d1.l = 1 の時)
 		d2.w =	0	デジタル
 			1	アナログ
@@ -3630,37 +3633,40 @@ offset	size
 
 $f3	_MUSICDRV	MUSICDRV Control
 
-Arg		d1.l	機能番号
+Arg		d1.l	Function number
 
-	音源ドライバ MUSICDRV.X で追加されたファンクションコールを呼び出す.
-	引数/返値は機能番号によって異なる.
+	Call a function provided by the MUSICDRV.X sound source driver.
+	The arguments and return values depend on the function number.
 
 ==============================================================================
 
 $f5	_SCSIDRV	SCSI IOCS
 
-Arg		d1.l	機能番号
+Arg		d1.l	Function number
 
-	SCSI IOCS で追加されたファンクションコールを呼び出す.
-	引数/返値は機能番号によって異なる.
+	Call a function provided by SCSI IOCS.
+	The arguments and return values depend on the function number.
 
 ==============================================================================
 
 $fd	_ABORTRST	Reset Environment to Initial Settings
 
-	Abortするための環境を再設定する. OS で使用する.
+	Reset the environment to initial settings, used for abort.
+	Used by the OS.
 
 ==============================================================================
 
 $fe	_IPLERR		Reboot
 
-	起動時のエラーでReboot時に使用する. 通常は使用しない.
+	Used to reboot in the case of a startup error.
+	Generally not used.
 
 ==============================================================================
 
 $ff	_ABORTJOB	Abort
 
-	Abortする. OS で使用する.
+	Do an abort.
+	Used by the OS.
 
 ==============================================================================
 
